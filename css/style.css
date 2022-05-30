@@ -1,116 +1,184 @@
-:root{
+:root {
+
 
 }
+
 .dropdown {
-    margin-top: 15px;
-   
-    background: #111;
+  margin-top: 15px;
+  position: relative;
+  background: #111;
+  /* text-align: center; */
+  justify-content: center;
 }
-img {
-    display: flex;
-    margin-left: auto;
-    margin-right: auto;
-    box-sizing: border-box;
+
+.img {
+  display: flex;
+  margin-left: auto;
+  margin-right: auto;
+  /* box-sizing: border-box; */
+  /* margin-top: -45px; */
+
 }
-.icons{   
-    margin right: 0;
+.logo{
+  margin-top: -45px;
+  display: flex;
+  margin-left: auto;
+  margin-right: auto;
+}
+/* .carousel-inner{
+  margin-top: 45px;
+  background-color: #111;
+} */
+
+.icons {
+  margin-right: 0;
+  color: #fff;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+.bhd-about{
+  /* color: #fff; */
+  margin-left: 115px;
+}
+.bhd-rules ul li,
+.bhd-about ul li{
+  list-style: none;
+ 
+}
+
+.bhd-about ul li a{
+  color: #c3cc26;
+  text-decoration: none;
+  
+}
+.bhd-rules ul li a{
+  color: #c3cc26;
+  text-decoration: none;
+}
+.footer{
+  display: flex;
+}
+.list-group{
+  border: none;
 }
 .dangnhap,
-.muave{
-    text-decoration: none !important;
-    width: 200px !important;
-    padding: 10px 25px;
-    font-size: 15px;
-    font-weight: bold;
-    color: #fff;
-    background-size: 100% 100% !important;
-    background-image: url(/img/bhds_nutv2.png) !important;
-    transition-duration: 0.4s;
-    cursor: pointer;
-    border-radius: 5px;
+.muave {
+  text-decoration: none !important;
+  width: 200px !important;
+  padding: 10px 25px;
+  font-size: 15px;
+  font-weight: bold;
+  color: #fff;
+  background-size: 100% 100% !important;
+  background-image: url(/img/bhds_nutv2.png) !important;
+  transition-duration: 0.4s;
+  cursor: pointer;
+  border-radius: 5px;
 }
-.muave :hover{ 
-    background-image: url(/img/trang.png);
-    color: white;
+
+.muave :hover {
+  background-image: url(/img/trang.png);
+  color: white;
 }
-* {box-sizing:border-box}
- 
- .slideshow-container {
-   max-width: 1000px;
-   position: relative;
-   margin: auto;
- }
- 
- .mySlides {
-   display: none;
- } 
- .prev, .next {
-   cursor: pointer;
-   position: absolute;
-   top: 50%;
-   width: auto;
-   margin-top: -22px;
-   padding: 16px;
-   color: white;
-   font-weight: bold;
-   font-size: 18px;
-   transition: 0.6s ease;
-   border-radius: 0 3px 3px 0;
-   user-select: none;
- }
- 
- .next {
-   right: 0;
-   border-radius: 3px 0 0 3px;
- }
- 
- .prev:hover, .next:hover {
-   background-color: rgba(0,0,0,0.8);
- }
- 
- .text {
-   color: #f2f2f2;
-   font-size: 15px;
-   padding: 8px 12px;
-   position: absolute;
-   bottom: 8px;
-   width: 100%;
-   text-align: center;
- }
- 
- .numbertext {
-   color: #f2f2f2;
-   font-size: 12px;
-   padding: 8px 12px;
-   position: absolute;
-   top: 0;
- }
- 
- .dot {
-   cursor: pointer;
-   height: 15px;
-   width: 15px;
-   margin: 0 2px;
-   background-color: #bbb;
-   border-radius: 50%;
-   display: inline-block;
-   transition: background-color 0.6s ease;
- }
-.active, .dot:hover {
-   background-color: #717171;
- }
- 
- .fade {
-   -webkit-animation-name: fade;
-   -webkit-animation-duration: 1.5s;
-   animation-name: fade;
-   animation-duration: 1.5s;
- }
+
+* {
+  box-sizing: border-box
+}
+
+.slideshow-container {
+  max-width: 1000px;
+  position: relative;
+  margin: auto;
+}
+
+.mySlides {
+  display: none;
+}
+
+.prev,
+.next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  margin-top: -22px;
+  padding: 16px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+.prev:hover,
+.next:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.text {
+  color: #f2f2f2;
+  font-size: 15px;
+  padding: 8px 12px;
+  position: absolute;
+  bottom: 8px;
+  width: 100%;
+  text-align: center;
+}
+
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+.dot {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active,
+.dot:hover {
+  background-color: #717171;
+}
+
+.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 1.5s;
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
 @-webkit-keyframes fade {
-   from {opacity: .4}
-   to {opacity: 1}
- }
+  from {
+    opacity: .4
+  }
+
+  to {
+    opacity: 1
+  }
+}
+
 @keyframes fade {
-   from {opacity: .4}
-   to {opacity: 1}
- }
+  from {
+    opacity: .4
+  }
+
+  to {
+    opacity: 1
+  }
+}
