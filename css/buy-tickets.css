@@ -1,0 +1,59 @@
+.title {
+    text-align: center;
+    padding: 22px 0px;
+    /* background-image: url(https://www.bhdstar.vn/wp-content/themes/bhd/assets/images/bg-cinema-top.png); */
+    background-image: url(https://www.bhdstar.vn/wp-content/themes/bhd/assets/images/movie-details-bg.jpg);
+}
+
+.buy-tickets-container {
+    background-image: url(https://www.bhdstar.vn/wp-content/themes/bhd/assets/images/movie-details-bg.jpg);
+}
+
+.title a {
+    font-size: 20px;
+    margin-left: 12px;
+    margin-right: 12px;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-style: normal;
+    color: #fff;
+    line-height: 28px;
+    background-color: transparent;
+}
+.span-title {
+    color: #fff;
+    font-size: 20px;
+}
+.film p{
+    text-transform: uppercase;
+    display: block;
+    line-height: 22px;
+    font-size: 18px;
+    color: #fff;
+    text-align: center;
+    font-weight: 600;
+    margin-top: 16px;
+}
+.carousel{
+    display: flex;
+}
+.film-box{
+    width: 1140px;
+    height: 435px;
+    margin-left: 135px;
+}
+.film ul{
+    display: flex;
+    margin-bottom: 0;
+    list-style: none;
+}
+.film a{
+    text-decoration: none;
+}
+.film ul li{
+    margin-right: 23px;
+}
+.film img{
+    width: 198px;
+    height: 295px;
+}

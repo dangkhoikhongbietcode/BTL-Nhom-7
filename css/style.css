@@ -1,8 +1,13 @@
-:root {
-
-
+*{ 
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+ }
+.buy-tickets-btn{
+  color: #fff;
+  text-decoration: none;
 }
-
 .dropdown {
   margin-top: 15px;
   position: relative;
@@ -116,7 +121,8 @@
 
 .muave :hover {
   background-image: url(/img/trang.png);
-  color: white;
+  color: green;
+  background-color: white;
 }
 
 * {
@@ -219,3 +225,4 @@
     opacity: 1
   }
 }
+
