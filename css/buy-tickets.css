@@ -37,9 +37,10 @@
 .carousel{
     display: flex;
 }
+
 .film-box{
     width: 1140px;
-    height: 435px;
+    height: 335px;
     margin-left: 135px;
 }
 .film ul{
@@ -56,4 +57,51 @@
 .film img{
     width: 198px;
     height: 295px;
+}
+.circle-btn{
+    padding-top: 37px;
+    padding-bottom: 11px;
+}
+.border-bot{
+    border-bottom: 2px solid #42af33;
+    height: 2px;
+    max-width: 970px;
+    width: 100%px;
+    margin: 0 auto;
+    margin-top: 15px;
+}
+.circle-btn .dot{
+    width: 11px;
+    height: 11px;
+    margin-right: 5px;
+}
+.events{
+    background-image: url(https://www.bhdstar.vn/wp-content/themes/bhd/assets/images/bg-home-02.jpg);
+    padding-top: 25px;
+}
+.event-titles{
+    text-align: center;
+    
+}
+.event-titles a{
+    font-size: 28px;
+    margin-left: 12px;
+    margin-right: 12px;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-style: normal;
+    color: #bcdc95;
+    line-height: 28px;
+    background-color: transparent;
+    
+}
+.promotion{
+    display: flex;
+}
+.promotion ul li{
+    list-style: none;
+}
+.promote-pics{
+    width: 430px;
+    height: 240px;
 }
