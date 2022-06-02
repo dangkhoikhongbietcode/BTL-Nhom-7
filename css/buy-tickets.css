@@ -93,7 +93,7 @@
     color: #bcdc95;
     line-height: 28px;
     background-color: transparent;
-    
+    font-weight: 600;
 }
 .promotion{
     display: flex;
@@ -104,4 +104,12 @@
 .promote-pics{
     width: 430px;
     height: 240px;
+}
+.card-group{
+    margin-top: 28px;
+    margin-left: 40px;
+    margin-right: 25px;
+}
+.card{
+    margin-right: 15px;
 }
