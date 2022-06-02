@@ -1,0 +1,14 @@
+.cinema-list{
+    background-image: url(https://www.bhdstar.vn/wp-content/themes/bhd/assets/images/bg-cinema-10.png);
+}
+.cinema-title{
+    padding: 30px 0;
+    text-align: center;
+}
+.cinema-title .fa-h1{
+    color: #fff;
+    font-size: 36px;
+    margin: 30px 0;
+    text-transform: uppercase;
+    font-style: normal;
+}
