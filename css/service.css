@@ -1,0 +1,17 @@
+.container{
+    background: #e8e8e8;
+   }
+   .event img{
+       height: 430;
+       width: 240;
+     }
+     .about--us-title{
+       text-align: center;
+       font-weight: bold;
+       font-size: 26px;
+       color: #111;
+     }
+     .contact p{
+       margin: 0 0 10px;
+       padding-bottom: 21px;
+     }
