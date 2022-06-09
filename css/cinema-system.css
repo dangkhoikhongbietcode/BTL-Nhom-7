@@ -1,3 +1,15 @@
+.cinemas-h1{
+    font-size: 36px;
+    color: white;
+    text-transform: uppercase;
+    font-style: normal;
+    text-align: center;
+    
+}
+.cinema-title{
+    text-align: center;
+    margin-bottom: 30px;
+}
 .cinema-list-1,
 .cinema-list-2,
 .cinema-list-3
@@ -29,7 +41,6 @@
 .card-text{
     color: #8b9aaa;
     font-size: 12px;
-    /* src: ; */
 }
 .card-body a{
     font-size: 14px;
