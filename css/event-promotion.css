@@ -1,0 +1,67 @@
+.cinemas-h1{
+    font-size: 36px;
+    color: white;
+    text-transform: uppercase;
+    font-style: normal;
+    text-align: center;
+    
+}
+.cinema-title{
+    text-align: center;
+    margin-bottom: 30px;
+}
+.cinema-list-1,
+.cinema-list-2,
+.cinema-list-3
+{   
+    display: flex;
+}
+.card{
+    width: 245px;
+    height: 235px;
+    margin-bottom: 100px;
+    margin-left: 15px;
+    margin-right: 15px;
+}
+.col-1{
+    margin-left: 217px;
+}
+.cinemas-container{
+    background-image: url(https://www.bhdstar.vn/wp-content/themes/bhd/assets/images/bg-cinema-10.png);
+}
+.card-body{
+    position: relative;
+    background: #172029;
+}
+.card-title{
+    color: #fff;
+    font-size: 14px;
+    text-transform: uppercase;
+    padding-bottom: 13px;
+}
+.card-text{
+    color: #8b9aaa;
+    font-size: 12px;
+}
+.card-body a{
+    font-size: 14px;
+    position: absolute;
+    bottom: 20px;
+    right: 0;
+    text-decoration: none;
+    background-color: #3b5998;
+    color: #fff;
+    padding: 5px;
+    border: #3b5998 1px solid;
+    border-radius: 3px;
+}
+.card-body a:hover{
+    color: black;
+    background-color: yellow;
+}
+.spinner-grow{
+    display: flex;
+    color: #89c441;
+    justify-items: center;
+    margin: auto;
+}

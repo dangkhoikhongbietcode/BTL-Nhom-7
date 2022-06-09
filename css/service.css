@@ -35,6 +35,22 @@ body {
   padding: 15px 0 15px 45px;
 }
 .button--share{
-  text-decoration: none;
+ 
   
+}
+.ti-facebook{
+  color: #fff;
+  text-decoration: none;
+  background-color: #3B5998;
+  font-size: 14px;
+  display: inline-block;
+  line-height: 33px;
+  width: 105px;
+  height: 35px;
+  text-align: center;
+  border-radius: 5px;
+}
+.ti-tag{
+  font-size: 20px;
+  color: #89c441 ;
 }
