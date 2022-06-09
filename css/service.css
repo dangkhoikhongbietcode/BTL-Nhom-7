@@ -1,17 +1,40 @@
-.container{
-    background: #e8e8e8;
-   }
-   .event img{
-       height: 430;
-       width: 240;
-     }
-     .about--us-title{
-       text-align: center;
-       font-weight: bold;
-       font-size: 26px;
-       color: #111;
-     }
-     .contact p{
-       margin: 0 0 10px;
-       padding-bottom: 21px;
-     }
+body {
+  background: #e8e8e8;
+}
+
+.event img {
+  height: 430;
+  width: 240;
+}
+
+.about--us-title {
+  text-align: center;
+  font-weight: bold;
+  font-size: 26px;
+  color: #111;
+}
+
+.contact p {
+  margin: 0 0 10px;
+  padding-bottom: 21px;
+}
+
+.about--us-sidebar {
+  background-image: url(/img/img-map.jpg);
+}
+
+.item--cinema {
+  display: block;
+  position: relative;
+  text-decoration: none;
+  background: #89c441;
+  color: #e8e8e8;
+  font-size: 14px;
+  line-height: 25px;
+  font-weight: 500;
+  padding: 15px 0 15px 45px;
+}
+.button--share{
+  text-decoration: none;
+  
+}
