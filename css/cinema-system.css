@@ -58,3 +58,69 @@
     color: black;
     background-color: yellow;
 }
+
+.film-list{
+    padding-top: 40px;
+    padding-bottom: 40px;
+}
+i.fas.fa-h3 {
+    font-style: normal;
+    color: #132029;
+    text-transform: uppercase;
+    margin: 20px 12px 15px 12px;
+    font-size: 20px;
+}
+.film-title a{
+    text-decoration: none;
+}
+.film-title{
+    text-align: center;
+    margin-bottom: 40px;
+}
+.film-title a:hover{
+    text-decoration: underline;
+    color: #d4dd29;
+}
+i.fas.fa-h3:hover{
+    color: #d4dd29;
+}
+.film-now{
+    text-decoration: underline;
+    color: #d4dd29 !important;
+}
+.film-list{
+    background-color: #fff;
+}
+.carousel-inner{
+    background-color: #fff;
+}
+.carousel-item img{
+    width: 200px;
+    height: 300px;
+    margin-right: 20px;
+    position: relative;
+    padding-bottom: 50px;
+}
+.carousel-item span{
+    position: absolute;
+    bottom: 0;
+    margin-top: 20px;
+    color: red;
+    left: 16%;
+}
+
+/* .carousel-item button{
+    position: absolute;
+    left: 12%;
+    bottom: -50px;
+    color: red;
+} */
+.carousel-item .card-1{
+    margin-left: 125px;
+}
+.active, .dot:hover {
+    background-color: white;
+}
+.carousel-control-next, .carousel-control-prev{
+    color: #666;
+}
