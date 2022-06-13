@@ -65,3 +65,81 @@
     justify-items: center;
     margin: auto;
 }
+.buy-tickets-containers{
+    background-color: #fff;
+}
+.title {
+    text-align: center;
+    padding: 22px 0px;
+     
+}
+.title a {
+    font-size: 20px;
+    margin-left: 12px;
+    margin-right: 12px;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-style: normal;
+    color: #172029;
+    line-height: 28px;
+    background-color: transparent;
+}
+.span-title {
+    color: #fff;
+    font-size: 20px;
+}
+.film p{
+    text-transform: uppercase;
+    display: block;
+    line-height: 22px;
+    font-size: 18px;
+    color: #172029;
+    text-align: center;
+    font-weight: 600;
+    margin-top: 16px;
+}
+.carousel{
+    display: flex;
+}
+
+.film-list{
+    margin-bottom: 50px;
+}
+
+.film-box{
+    width: 1140px;
+    height: 335px;
+    margin-left: 135px;
+}
+.film ul{
+    display: flex;
+    margin-bottom: 0;
+    list-style: none;
+}
+.film a{
+    text-decoration: none;
+}
+.film ul li{
+    margin-right: 23px;
+}
+.film img{
+    width: 198px;
+    height: 295px;
+}
+.circle-btn{
+    padding-top: 37px;
+    padding-bottom: 11px;
+}
+.border-bot{
+    border-bottom: 2px solid #42af33;
+    height: 2px;
+    max-width: 970px;
+    width: 100%px;
+    margin: 0 auto;
+    margin-top: 15px;
+}
+.circle-btn .dot{
+    width: 11px;
+    height: 11px;
+    margin-right: 5px;
+}
