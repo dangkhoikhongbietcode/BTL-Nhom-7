@@ -9,7 +9,7 @@
   text-decoration: none;
 }
 .dropdown {
-  margin-top: 15px;
+   
   position: relative;
   background: #111;
   /* text-align: center; */
@@ -41,6 +41,16 @@
   position: absolute;
   top: 0;
   right: 0;
+  /* font-size: 40px; */
+   
+}
+.icons-list{
+  display: flex;
+  font-size: 30px;
+  float: left;
+  margin: 30px 15px 0 0;
+   
+   
 }
 .bhd-about{
   /* color: #fff; */
@@ -104,10 +114,10 @@
   line-height: 22px;
   text-align: center;
 }
-.dangnhap,
-.muave {
+.login,
+.buy {
   text-decoration: none !important;
-  width: 200px !important;
+  width: 150px !important;
   padding: 10px 25px;
   font-size: 15px;
   font-weight: bold;
@@ -117,6 +127,16 @@
   transition-duration: 0.4s;
   cursor: pointer;
   border-radius: 5px;
+}
+.buy{
+  margin: 30px 0 0 20px;
+   
+}
+.btn-secondary{
+  margin-left: 30px;
+}
+.login{
+  margin: 30px 30px 0 0;
 }
 
 .muave :hover {
