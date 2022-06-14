@@ -1,19 +1,5 @@
-let dog = {}
- 
-console.log(dog)
-dog.name= 'cho';
-dog.legs= 4;
-dog.color ='browm';
-dog.age = 2;
-dog.bark = function(){
-    return "woof woof";
-}
-console.log(dog.name)
-//...
-dog.breed = 'becgie';
-dog.getDogInfo = function(){
-    
-}
+
+
 var slideIndex = 1;
  showSlides(slideIndex);
 function plusSlides(n) {
@@ -37,3 +23,15 @@ function showSlides(n) {
    slides[slideIndex-1].style.display = "block";
    dots[slideIndex-1].className += " active";
  }
+ 
+//  js menu button 
+ let menuBtn = document.querySelector(".ti-menu");
+ let closeBtn = document.querySelector(".ti-close")
+ menuBtn.addEventListener('click', function click1(){
+   menuBtn.classList.add('close');
+  closeBtn.classList.add('open');
+ })
+ closeBtn.addEventListener('click', function click2(){
+  menuBtn.classList.remove('close');
+  closeBtn.classList.remove('open');
+ })

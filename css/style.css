@@ -4,6 +4,7 @@
   border: 0;
   font-size: 100%;
  }
+
 .buy-tickets-btn{
   color: #fff;
   text-decoration: none;
@@ -14,20 +15,32 @@
   background: #111;
   justify-content: space-around !important;
 }
+.ti-close,
 .ti-menu{
   color: #b2d134;
   background-color: #262626;
   font-size: 30px;
   border: none;
 }
+.ti-close p,
 .ti-menu p{
   color: #fff;
   font-size: 14px !important;
   font-weight: 500;
 }
+.ti-close:hover,
 .ti-menu:hover{
   color: #b2d134;
   background-color: #262626;
+}
+.ti-close{
+  display:none;
+}
+.ti-menu.close{
+  display: none !important;
+}
+.ti-close.open{
+  display: inline-block !important;
 }
 .img {
   display: flex;
