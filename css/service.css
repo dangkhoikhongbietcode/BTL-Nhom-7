@@ -2,6 +2,14 @@ body {
   background: #e8e8e8;
 }
 
+.container{
+  display: flex;
+}
+
+.about-us-text{
+  max-width: 600px;
+}
+
 .event img {
   height: 430;
   width: 240;
@@ -34,11 +42,11 @@ body {
   font-weight: 500;
   padding: 15px 0 15px 45px;
 }
-.button--share{
+/* .button--share{
  
   
-}
-.ti-facebook{
+} */
+.button--share{
   color: #fff;
   text-decoration: none;
   background-color: #3B5998;
@@ -49,6 +57,10 @@ body {
   height: 35px;
   text-align: center;
   border-radius: 5px;
+}
+.button--share a{
+  color: #fff;
+  text-decoration: none;
 }
 .ti-tag{
   font-size: 20px;
