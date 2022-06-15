@@ -5,7 +5,9 @@ body {
 .container{
   display: flex;
 }
-
+.about-us{
+  max-width: 600px;
+}
 .about-us-text{
   max-width: 600px;
 }
@@ -29,8 +31,13 @@ body {
 
 .about--us-sidebar {
   background-image: url(/img/img-map.jpg);
+  margin-left: 350px;
+  /* max-width: 270px; */
+  
 }
-
+.about--us-sidebar ul{
+  list-style: none;
+}
 .item--cinema {
   display: block;
   position: relative;
@@ -41,11 +48,9 @@ body {
   line-height: 25px;
   font-weight: 500;
   padding: 15px 0 15px 45px;
-}
-/* .button--share{
- 
   
-} */
+}
+ 
 .button--share{
   color: #fff;
   text-decoration: none;
@@ -65,4 +70,9 @@ body {
 .ti-tag{
   font-size: 20px;
   color: #89c441 ;
+}
+.icon-service{
+  display: flex;
+  justify-content: space-between;
+  
 }
