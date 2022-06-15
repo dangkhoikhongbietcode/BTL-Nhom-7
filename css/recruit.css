@@ -1,0 +1,53 @@
+.body{
+    background: #e8e8e8;
+}
+.recruit-content{
+    text-align: center;
+    color: #111111;
+    font-size: 26px;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+.content-tab-recruit ul{
+    list-style-type: none;
+}
+.content-tab-recruit a{
+    text-decoration: none;
+}
+.recruit{
+    display: flex;
+    
+}
+.text--content{
+    margin-left: 150px;
+    max-width: 700px;
+   
+}
+.text--content h3{
+    text-align: center;
+    font-size: 24px;
+    color: #339966;
+    font-weight: bold;
+}
+.content-tab-recruit{
+    max-width: 260px;
+    margin-left: 120px;
+   
+}
+.content-tab-recruit li{
+    margin-bottom: 10px;
+    
+}
+.content-tab-recruit li a{
+    color: #fff;
+    font-size: 14px;
+    font-weight: bold;
+    margin-left: 10px;
+}
+.active{
+    background: #50b647;
+    text-transform: uppercase;
+}
+ .active-text{
+    background: #ccc;
+}
