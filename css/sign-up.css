@@ -1,0 +1,78 @@
+.sign-up-container{
+    background-image: url(/img/bg-cinema-10.png);
+    
+}
+.sign-up-title {
+    text-align: center;
+    padding: 22px 0px;
+     
+}
+.sign-up-title a {
+    font-size: 20px;
+    margin-left: 12px;
+    margin-right: 12px;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-style: normal;
+    color: #fff;
+    line-height: 28px;
+    background-color: transparent;
+}
+.span-sign-up-title {
+    color: #fff;
+    font-size: 20px;
+}
+.sign-up-text{
+
+}
+.sign-up-title a{
+    font-size: 31px;
+     
+}
+.sign-up-text-1{
+    color: #d4dd29;
+}
+.sign-in{
+    max-width: 700px;
+}
+.form-label{
+    color: #fff;
+}
+.btn-primary{
+    background-color: #42af33;
+}
+.mb-3{
+    display: flex;
+    font-size: 15px;
+}
+
+.form-control{
+    background: #37424b;
+    max-width: 355px;
+    max-height: 37px;
+}
+.form1{
+    margin-left: 33px;
+}
+.password-forget{
+    margin-left: 230px;
+    font-size: 13px;
+    color: #37424b;
+}
+.password-forget:hover{
+    color: #b2d134;
+}
+.sign-in-form{
+    max-width: 555px;
+    justify-content: center;
+    background: #1c262f;
+    border-radius: 5px;
+    padding: 25px;
+    margin-left: 180px;
+}
+.sign-in-text{
+    font-size: 20px;
+    color: #fff;
+    text-transform: uppercase;
+    margin-left: 180px;
+}

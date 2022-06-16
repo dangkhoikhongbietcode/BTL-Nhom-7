@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/font/themify-icons-font/themify-icons/themify-icons.css">
+    <link rel="stylesheet" href="./css/buy-tickets.css">
+    <link rel="stylesheet" href="/css/sign-up.css">
+    <title>Đăng kí thành viên</title>
+</head>
+
+<body>
+
+    <head>
+
+        <div class="dropdown">
+            <div class="icons">
+                <div class="icons-list">
+                    <div class="instagram">
+                        <i class="ti-instagram"></i>
+                    </div>
+                    <div class="tiktok">
+                        <i class="ti-tumblr-alt"></i>
+                    </div>
+                    <div class="youtube">
+                        <i class="ti-youtube"></i>
+                    </div>
+                    <div class="facebook">
+                        <i class="ti-facebook"></i>
+                    </div>
+                </div>
+                <button class="login">ĐĂNG NHẬP</button>
+            </div>
+            <a class="btn btn-secondary ti-menu" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown"
+                aria-expanded="false">
+                <br>
+                <p>MENU</p>
+            </a>
+
+            <a class="btn btn-secondary ti-close" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown"
+                aria-expanded="false">
+                <br>
+                <p>CLOSE</p>
+            </a>
+            <button class="buy"><a href="./buy-tickets.html" class="buy-tickets-btn">MUA VÉ</a></button>
+            <a href="./index.html"><img class="logo" src="/img/logo.png" alt="loogo"></a>
+            <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                <li><a class="dropdown-item" href="/buy-tickets.html">LỊCH CHIẾU</a></li>
+                <li><a class="dropdown-item" href="/cinema-system.html">HỆ THỐNG RẠP</a></li>
+                <li><a class="dropdown-item" href="/event-promotion.html">KHUYẾN MÃI | SỰ KIỆN</a></li>
+                <li><a class="dropdown-item" href="/service.html">DỊCH VỤ QUẢNG CÁO</a></li>
+                <li><a class="dropdown-item" href="/recruit.html">TUYỂN DỤNG</a></li>
+                <li><a class="dropdown-item" href="/about.html">VỀ CHÚNG TÔI</a></li>
+            </ul>
+        </div>
+    </head>
+
+    <!-- Container  -->
+    <div class="sign-up-container">
+        <div class="sign-up-title">
+            <i class="fas fa-h3 "><a href="#" class="sign-up-text-1">Thành viên</a> </i>
+            <span class="span-title">|</span>
+            <i class="fas fa-h3 "><a href="#" class="sign-up-text">faq</a> </i>
+            <span class="span-title">|</span>
+            <i class="fas fa-h3 "><a href="#" class="sign-up-text">quy định</a> </i>
+        </div>
+        <p class="sign-in-text">đăng nhập</p>
+        <div class="sign-in-form">
+            <div class="sign-in">
+                <form>
+                    <div class="mb-3">
+                        <label for="exampleInputEmail1" class="form-label">EMAIL(*)</label>
+                        <input type="email" class="form-control form1" id="exampleInputEmail1" aria-describedby="emailHelp">
+
+                    </div>
+                    <div class="mb-3">
+                        <label for="exampleInputPassword1" class="form-label">MẬT KHẨU(*)</label>
+                        <input type="password" class="form-control" id="exampleInputPassword1">
+                    </div>
+            </div>
+            <div>
+                <button type="submit" class="btn btn-primary">ĐĂNG NHẬP</button>
+                <a class="password-forget" href="">Quên mật khẩu</a>
+            </div>
+            </form>
+        </div>
+
+    </div>
+
+    </div>
+    <div class="events">
+        <div class="event-titles">
+            <i class="fas fa-h1"><a href="#">khuyến mãi</a></i>
+            <span class="span-title">|</span>
+            <i class="fas fa-h1"><a href="#">sự kiện</a></i>
+        </div>
+        <div id="carouselId" class="carousel slide" data-bs-ride="carousel">
+            <!-- <div class="carousel-inner promotion" role="listbox">
+                    <ul>
+                        <li class="carousel-item active">
+                            <a href="#"><img src="./img/promotion1.jpeg" alt="" class="promote-pics"></a>
+                        </li>
+                        <li class="carousel-item">
+                            <a href="#"><img src="./img/promotion2.png" alt="" class="promote-pics"></a>
+                        </li>
+                        <li class="carousel-item">
+                            <a href="#"><img src="./img/promotion3.jpeg" alt="" class="promote-pics"></a>
+                        </li>
+                    </ul>
+                </div> -->
+
+            <div class="card-group">
+                <div class="card">
+                    <img class="card-img-top" src="./img/promotion1.jpeg" alt="Card image cap">
+
+                </div>
+                <div class="card">
+                    <img class="card-img-top" src="./img/promotion2.png" alt="Card image cap">
+
+                </div>
+
+                <div class="card">
+                    <img class="card-img-top" src="./img/promotion3.jpeg" alt="Card image cap">
+
+                </div>
+            </div>
+        </div>
+        <div class="circle-btn">
+            <div style="text-align:center">
+                <span class="dot" onclick="currentSlide(1)"></span>
+                <span class="dot" onclick="currentSlide(2)"></span>
+                <span class="dot" onclick="currentSlide(3)"></span>
+            </div>
+        </div>
+    </div>
+    </div>
+
+    </div>
+    <div style="text-align: center; background-image: url(/img/bg-grid.jpg);"><img src="./img/logo.png" alt=""></div>
+
+    <div class="footer">
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item">
+                <h3>VỀ BDH STAR</h3>
+            </li>
+            <li class="list-group-item"><a href="">Hệ Thống Rạp</a></li>
+            <li class="list-group-item"><a href="">Tuyển Dụng</a></li>
+            <li class="list-group-item"><a href="">Liên Hệ</a></li>
+            <li class="list-group-item"><a href=""></a></li>
+        </ul>
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item">
+                <h3>QUY ĐỊNH & ĐIỀU KHOẢN</h3>
+            </li>
+            <li class="list-group-item"><a href="">Quy định thành viên</a></li>
+            <li class="list-group-item"><a href="">Điều khoản</a></li>
+            <li class="list-group-item"><a href="">Hướng dẫn đặt vé trực tuyến</a></li>
+            <li class="list-group-item"><a href="">Quy định và chính sách chung</a></li>
+            <li class="list-group-item"><a href="">Chính sách bảo vệ thông tin của người tiêu dùng</a></li>
+        </ul>
+        <h3 class="bhd-cineplex">© 2015 BHD Star Cineplex</h3>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+        crossorigin="anonymous"></script>
+    <!-- <script src="./js/java.js"></script> -->
+    <script src="./js/buy-tickets.js"></script>
+</body>
+
+</html>
