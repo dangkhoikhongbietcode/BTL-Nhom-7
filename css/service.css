@@ -1,5 +1,6 @@
 body {
   background: #e8e8e8;
+  
 }
 
 .container{
@@ -22,6 +23,7 @@ body {
   font-weight: bold;
   font-size: 26px;
   color: #111;
+  text-transform: uppercase;
 }
 
 .contact p {
@@ -33,7 +35,8 @@ body {
   background-image: url(/img/img-map.jpg);
   margin-left: 350px;
   /* max-width: 270px; */
-  
+  max-height: 850px;
+  margin-top: 40px;
 }
 .about--us-sidebar ul{
   list-style: none;
@@ -48,9 +51,13 @@ body {
   line-height: 25px;
   font-weight: 500;
   padding: 15px 0 15px 45px;
-  
+  border-radius: 5px;
 }
- 
+
+.list-cinema li a{
+  margin: 20px 30px 10px 0;
+   
+}
 .button--share{
   color: #fff;
   text-decoration: none;
@@ -68,11 +75,33 @@ body {
   text-decoration: none;
 }
 .ti-tag{
-  font-size: 20px;
+  font-size: 30px;
   color: #89c441 ;
 }
 .icon-service{
   display: flex;
   justify-content: space-between;
-  
+  margin: 30px 0 100px 0;
+}
+.content--title,
+.date,
+.text--content{
+  margin-left: 70px;
+}
+.content--title{
+  margin-top: 30px;
+  font-size: 22px;
+  font-weight: 700 ;
+}
+.date{
+  font-size: 16px;
+  color: #5f6f88;
+  font-weight: 500;
+}
+.text--content p{
+  margin-top: 20px;
+  margin-bottom: 30px;
+}
+.about-img{
+  margin-left: 60px;
 }

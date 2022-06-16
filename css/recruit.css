@@ -1,6 +1,4 @@
-.body{
-    background: #e8e8e8;
-}
+ 
 .recruit-content{
     text-align: center;
     color: #111111;
@@ -32,11 +30,11 @@
 .content-tab-recruit{
     max-width: 260px;
     margin-left: 120px;
-   
+    
 }
 .content-tab-recruit li{
     margin-bottom: 10px;
-    
+
 }
 .content-tab-recruit li a{
     color: #fff;
