@@ -1,6 +1,6 @@
-.sign-up-container{
+.sign{
     background-image: url(/img/bg-cinema-10.png);
-    
+    display: flex;
 }
 .sign-up-title {
     text-align: center;
@@ -44,6 +44,7 @@
 .mb-3{
     display: flex;
     font-size: 15px;
+    justify-content: space-between;
 }
 
 .form-control{
@@ -75,4 +76,20 @@
     color: #fff;
     text-transform: uppercase;
     margin-left: 180px;
+}
+
+.form-check{
+    color: #fff;
+}
+.sign-up-form{
+    max-width: 555px;
+    /* justify-content: center; */
+    background: #1c262f;
+    border-radius: 5px;
+    padding: 25px;
+    margin-left: 180px;
+}
+.form-control{
+    max-width: 250px;
+     
 }
