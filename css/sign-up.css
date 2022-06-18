@@ -5,7 +5,7 @@
 .sign-up-title {
     text-align: center;
     padding: 22px 0px;
-     
+    background-image: url(/img/bg-cinema-10.png);
 }
 .sign-up-title a {
     font-size: 20px;
@@ -22,8 +22,8 @@
     color: #fff;
     font-size: 20px;
 }
-.sign-up-text{
-
+.sign-up-text-1{
+    color: #d4dd29;
 }
 .sign-up-title a{
     font-size: 31px;
@@ -71,6 +71,7 @@
     padding: 25px;
     margin-left: 180px;
 }
+.sign-up-text-header,
 .sign-in-text{
     font-size: 20px;
     color: #fff;
@@ -92,4 +93,16 @@
 .form-control{
     max-width: 250px;
      
+}
+.date-of-birth{
+    display: flex;
+    max-width: 300px;
+    max-width: 250px;
+}
+.form-select{
+   background: #1c262f; 
+   color: #fff;
+   max-width: 250px;
+   max-height: 37px;
+   font-size: 14px;
 }
