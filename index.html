@@ -9,6 +9,7 @@
     integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
   <link rel="stylesheet" href="./css/style.css">
   <link rel="stylesheet" href="./css/font/themify-icons-font/themify-icons/themify-icons.css">
+  <link rel="stylesheet" href="/css/buy-tickets.css">
   <title>BHD STAR CINEPLEX - HỆ THỐNG RẠP CHIẾU PHIM HIỆN ĐẠI</title>
 </head>
 
@@ -41,7 +42,8 @@
         <ul class="dropdown-menu login-form" aria-labelledby="dropdownMenuLink">
           <li><input type="text" placeholder="Email" class="login-input dropdown-item">
           <li><input type="text" placeholder="Password" class="login-input dropdown-item">
-          <li class="li-3"><button type="submit" class="login-submit ">ĐĂNG NHẬP</button><a href="#" class="pass-forgot">Quên mật khẩu</a>
+          <li class="li-3"><button type="submit" class="login-submit ">ĐĂNG NHẬP</button><a href="#"
+              class="pass-forgot">Quên mật khẩu</a>
           <li><a class="dropdown-item login-register" href="./sign-up.html">ĐĂNG KÝ THÀNH VIÊN</a></li>
       </div>
 
@@ -94,35 +96,94 @@
       <span class="visually-hidden">Next</span>
     </button>
   </div>
+  <div class="buy-tickets-container">
+    <div class="title">
+      <i class="fas fa-h3 "><a href="#" class="">Lịch chiếu theo phim</a> </i>
+      <span class="span-title">|</span>
+      <i class="fas fa-h3 "><a href="#" class="">Lịch chiếu theo rạp</a> </i>
+      <span class="span-title">|</span>
+      <i class="fas fa-h3 "><a href="#" class="">Lịch chiếu theo giờ</a> </i>
+    </div>
+    <div class="film-list">
+      <div class="film-box">
+        <div class="film">
+          <ul>
+            <li><a href="#"><img src="./img/jworld.jpg" alt="">
+                <p>Jurassic word dominion</p>
+              </a></li>
+            <li><a href="#"><img src="./img/moonbound.jpg" alt="">
+                <p>Moon bound</p>
+              </a></li>
+            <li><a href="#"><img src="./img/goodmorning.jpg" alt="">
+                <p>good morning</p>
+              </a></li>
+            <li><a href="#"><img src="./img/tgmaverick.jpg" alt="">
+                <p>top gun marvic</p>
+              </a></li>
+            <li><a href="#"><img src="./img/thecellar.jpg" alt="">
+                <p>the cellar</p>
+              </a></li>
+            <!-- <li><a href="#"><img src="./img/maika.jpg" alt=""><p>maika</p></a></li>
+                <li><a href="#"><img src="./img/theanchor.jpg" alt=""><p>the anchor</p></a></li> -->
+          </ul>
+        </div>
+      </div>
+      <div class="circle-btn">
+        <div style="text-align:center">
+          <span class="dot" onclick="currentSlide(1)"></span>
+          <span class="dot" onclick="currentSlide(2)"></span>
+          <span class="dot" onclick="currentSlide(3)"></span>
+        </div>
+        <div class="border-bot"></div>
+      </div>
+    </div>
+    <div class="events">
+      <div class="event-titles">
+        <i class="fas fa-h1"><a href="#">khuyến mãi</a></i>
+        <span class="span-title">|</span>
+        <i class="fas fa-h1"><a href="#">sự kiện</a></i>
+      </div>
+      <div id="carouselId" class="carousel slide" data-bs-ride="carousel">
+        <!-- <div class="carousel-inner promotion" role="listbox">
+                <ul>
+                    <li class="carousel-item active">
+                        <a href="#"><img src="./img/promotion1.jpeg" alt="" class="promote-pics"></a>
+                    </li>
+                    <li class="carousel-item">
+                        <a href="#"><img src="./img/promotion2.png" alt="" class="promote-pics"></a>
+                    </li>
+                    <li class="carousel-item">
+                        <a href="#"><img src="./img/promotion3.jpeg" alt="" class="promote-pics"></a>
+                    </li>
+                </ul>
+            </div> -->
 
-  <div class="slideshow-container">
-    <!-- Kết hợp hình ảnh và nội dung cho mội phần tử trong slideshow-->
-    <div class="mySlides fade">
-      <div class="numbertext">1 / 3</div>
-      <img src="/img/HO00002443.jpg" style="width:100%">
-      <div class="text">Nội Dung 1</div>
+        <div class="card-group">
+          <div class="card">
+            <img class="card-img-top" src="./img/promotion1.jpeg" alt="Card image cap">
+
+          </div>
+          <div class="card">
+            <img class="card-img-top" src="./img/promotion2.png" alt="Card image cap">
+
+          </div>
+
+          <div class="card">
+            <img class="card-img-top" src="./img/promotion3.jpeg" alt="Card image cap">
+
+          </div>
+        </div>
+      </div>
+      <div class="circle-btn">
+        <div style="text-align:center">
+          <span class="dot" onclick="currentSlide(1)"></span>
+          <span class="dot" onclick="currentSlide(2)"></span>
+          <span class="dot" onclick="currentSlide(3)"></span>
+        </div>
+      </div>
     </div>
-    <div class="mySlides fade">
-      <div class="numbertext">2 / 3</div>
-      <img src="/img/HO00002446.jpg" style="width:100%">
-      <div class="text">Nội Dung 2</div>
-    </div>
-    <div class="mySlides fade">
-      <div class="numbertext">3 / 3</div>
-      <img src="/img/HO00002447.jpg" style="width:100%">
-      <div class="text">Nội Dung 3</div>
-    </div>
-    <!-- Nút điều khiển mũi tên-->
-    <a class="prev" onclick="plusSlides(-1)">❮</a>
-    <a class="next" onclick="plusSlides(1)">❯</a>
   </div>
-  <br>
-  <!-- Nút tròn điều khiển slideshow-->
-  <div style="text-align:center">
-    <span class="dot" onclick="currentSlide(1)"></span>
-    <span class="dot" onclick="currentSlide(2)"></span>
-    <span class="dot" onclick="currentSlide(3)"></span>
-  </div>
+  
   <div style="text-align: center; background-image: url(/img/bg-grid.jpg);"><img src="./img/logo.png" alt=""></div>
   <div class="footer">
     <ul class="list-group list-group-flush">
