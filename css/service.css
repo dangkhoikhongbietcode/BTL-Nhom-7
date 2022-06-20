@@ -105,3 +105,31 @@ body {
 .about-img{
   margin-left: 60px;
 }
+@media(max-width: 740px){
+  .icons-list{
+    display: none;
+  }
+  .container{
+      display: block;
+  }
+  .about-img{
+    width: 300px;
+    height: 245px;
+  }
+  .about--us-sidebar {
+    background-image: url(/img/img-map.jpg);
+    width: 350px;
+    height: 850px;
+    margin-top: 40px;
+    margin-left: 0px;
+  }
+  .bhd-cineplex{
+    display: none;
+  }
+  .icon-service {
+    flex-direction: column;
+  }
+  .about--us-content {
+    margin-left: -75px;
+  }
+}

@@ -14,7 +14,6 @@
 }
 .recruit{
     display: flex;
-    
 }
 .text--content{
     margin-left: 150px;
@@ -49,3 +48,17 @@
  .active-text{
     background: #ccc;
 }
+@media (max-width: 740px){
+    .icons-list{
+      display: none;
+    }
+    .recruit{
+        display: block;
+        /* width: 240px; */
+        margin-left: -130px;
+    }
+    .recruit-img{
+        width: 360px;
+        height: 162px;
+    }
+  }

@@ -4,12 +4,13 @@
   border: 0;
   font-size: 100%;
 }
-
 .buy-tickets-btn {
   color: #fff;
   text-decoration: none;
 }
-
+.header{
+  background-color: #111111!important;
+}
 .dropdown {
 
   position: relative;

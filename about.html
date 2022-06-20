@@ -18,24 +18,37 @@
 <body>
 
     <head>
-
-        <div class="dropdown">
-            <div class="icons">
-                <div class="icons-list">
-                    <div class="instagram">
-                        <i class="ti-instagram"></i>
+        <div class="header">
+            <div class="dropdown">
+                <div class="icons">
+                    <div class="icons-list">
+                        <div class="instagram">
+                            <i class="ti-instagram"></i>
+                        </div>
+                        <div class="tiktok">
+                            <i class="ti-tumblr-alt"></i>
+                        </div>
+                        <div class="youtube">
+                            <i class="ti-youtube"></i>
+                        </div>
+                        <div class="facebook">
+                            <i class="ti-facebook"></i>
+                        </div>
                     </div>
-                    <div class="tiktok">
-                        <i class="ti-tumblr-alt"></i>
-                    </div>
-                    <div class="youtube">
-                        <i class="ti-youtube"></i>
-                    </div>
-                    <div class="facebook">
-                        <i class="ti-facebook"></i>
-                    </div>
+                    <!-- <button class="login">ĐĂNG NHẬP</button> -->
+                    <a class="btn btn-secondary login" href="#" role="button" id="dropdownMenuLink"
+                        data-bs-toggle="dropdown" aria-expanded="false">
+                        <br>
+                        <p>ĐĂNG NHẬP</p>
+                    </a>
+                    <ul class="dropdown-menu login-form" aria-labelledby="dropdownMenuLink">
+                        <li><input type="text" placeholder="Email" class="login-input dropdown-item">
+                        <li><input type="text" placeholder="Password" class="login-input dropdown-item">
+                        <li class="li-3"><button type="submit" class="login-submit ">ĐĂNG NHẬP</button><a href="#"
+                                class="pass-forgot">Quên mật khẩu</a>
+                        <li><a class="dropdown-item login-register" href="./sign-up.html">ĐĂNG KÝ THÀNH VIÊN</a></li>
+                    </ul>
                 </div>
-                <button class="login">ĐĂNG NHẬP</button>
             </div>
             <a class="btn btn-secondary ti-menu" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown"
                 aria-expanded="false">
@@ -48,8 +61,7 @@
                 <br>
                 <p>CLOSE</p>
             </a>
-            <button class="buy">MUA VÉ</button>
-
+            <button class="buy"><a href="./buy-tickets.html" class="buy-tickets-btn">MUA VÉ</a></button>
             <a href="./index.html"><img class="logo" src="/img/logo.png" alt="loogo"></a>
             <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
                 <li><a class="dropdown-item" href="/buy-tickets.html">LỊCH CHIẾU</a></li>

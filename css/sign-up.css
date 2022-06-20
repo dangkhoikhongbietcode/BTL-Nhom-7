@@ -40,6 +40,7 @@
 }
 .btn-primary{
     background-color: #42af33;
+    border-color:#42af33 ;
 }
 .mb-3{
     display: flex;
@@ -106,3 +107,24 @@
    max-height: 37px;
    font-size: 14px;
 }
+@media (max-width: 740px){
+    .icons-list{
+      display: none;
+    }
+    .sign{
+        display: block;
+    }
+    .mb-3{
+        display: block;
+    }
+    .form1 {
+        margin: 0px;
+    }
+    .sign-in-form,
+    .sign-up-form{
+        margin-left: 10px;
+    }
+    .sign-up-title a {
+        font-size: 25px;
+    }
+  }
