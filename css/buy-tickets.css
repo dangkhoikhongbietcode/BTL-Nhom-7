@@ -19,6 +19,7 @@
     color: #fff;
     line-height: 28px;
     background-color: transparent;
+
 }
 .span-title {
     color: #fff;
@@ -34,9 +35,6 @@
     font-weight: 600;
     margin-top: 16px;
 }
-.carousel{
-    display: flex;
-}
 
 .film-box{
     width: 1140px;
@@ -44,7 +42,7 @@
     margin-left: 135px;
 }
 .film ul{
-    display: flex;
+    display: inline-flex;
     margin-bottom: 0;
     list-style: none;
 }
@@ -95,16 +93,6 @@
     background-color: transparent;
     font-weight: 600;
 }
-.promotion{
-    display: flex;
-}
-.promotion ul li{
-    list-style: none;
-}
-.promote-pics{
-    width: 430px;
-    height: 240px;
-}
 .card-group{
     margin-top: 28px;
     margin-left: 163px;
@@ -112,4 +100,12 @@
 }
 .card{
     margin-right: 15px;
+}
+.title .active1{
+    color: #d4dd29!important;
+    border-bottom: 1px solid #d4dd29;
+}
+.title .non-active:hover{
+    color: #d4dd29!important;
+    border-bottom: 1px solid #d4dd29;
 }

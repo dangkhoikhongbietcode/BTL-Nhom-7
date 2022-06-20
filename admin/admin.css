@@ -1,0 +1,69 @@
+.admin-nav,
+.admin-container{
+    background-image: url(/img/bg-cinema-10.png);
+
+}
+.admin-nav{
+    padding-bottom: 20px;
+}
+.btn-1{
+    margin-left: 200px;
+}
+
+.btn-3{
+    border-bottom-right-radius: 4px!important;
+    border-top-right-radius: 4px!important;
+}
+.btn-last{
+    margin-left: 100px!important;
+    border-radius: 4px!important;
+}
+.admin-btn{
+    background-color:#54ab35 ;
+    border: 0px solid #54ab35;
+    font-size: 16px;
+}
+.admin-btn:hover{
+    background-color: white;
+    color: #54ab35;
+}
+.admin-container{
+    display: flex;
+    height: 500px;
+}
+.admin-manipulation{
+    width: 200px;
+    /* background-color:#cccccc; */
+
+}
+.admin-manipulation ul li{
+    list-style: none;
+}
+.admin-manipulation button{
+    background-color:#54ab35 ;
+    margin-bottom: 10px;
+    padding: 5px;
+    border: 2px solid #54ab35;
+    border-radius: 4px;
+    color: white;
+}
+.admin-manipulation button:hover{
+    background-color: white;
+    color: #54ab35;
+    border: 2px solid white;
+}
+.element-list{
+    width: 1319.2px;
+    
+}
+.thead-inverse tr th{
+    color: white;
+}
+.table-striped>tbody>tr:nth-of-type(odd)>* {
+    color: white;
+}
+
+.table>:not(caption)>*>* {
+    border-bottom-width: 0px;
+    color: white;
+}

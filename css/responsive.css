@@ -1,0 +1,9 @@
+
+@media (max-width: 740px){
+    .icons-list{
+      display: none;
+    }
+    .film ul{
+      display: block;
+  }
+  }
