@@ -107,6 +107,9 @@
    max-height: 37px;
    font-size: 14px;
 }
+.sign-up-container{
+    display: flex;
+}
 @media (max-width: 740px){
     .icons-list{
       display: none;

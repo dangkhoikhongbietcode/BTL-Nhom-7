@@ -1,0 +1,124 @@
+
+.flim-background{
+    background-image: url(/img/movie-details-bg.jpg);
+     
+    padding-top: 20px;
+}
+ 
+.flim-text{
+    display: flex;
+    color: #fff;
+    
+    font-size: 24px;
+    margin-left: 200px;
+}
+.flim-text a{
+    text-decoration: none;
+    color: #fff;
+    font-size: 24px;
+}
+.flim-text a:hover{
+    color: #c3cc26;
+}
+.span-title-1,
+.flim-text p{
+    padding-left: 10px;
+}
+.flim-view{
+    max-width: 780px;
+    margin-left: 30px;
+    color: #fff;
+}
+.film--detail{
+    padding-top: 18px;
+    color: #a6b2c9;
+    font-size: 15px;
+    line-height: 26px;
+}
+.flim-is-playing{
+    display: flex;
+    margin-left: 200px;
+}
+.flim-info{
+    line-height: 45px;
+    padding-top: 20px;
+}
+.flim-info ul{
+    list-style: none;
+}
+.film-info-text{
+    color: #fff;
+}
+.classify{
+    color: #f8090f;
+}
+.ticket-view{
+    padding-top: 70px;
+    text-align: center;
+    text-transform: uppercase;
+    color: #fff;
+    /* border-bottom: 2px solid #608a2e; */
+}
+ 
+.date{
+    display: block;
+} 
+.info-inside{
+    /* display: flex; */
+    background: #1c2936;
+    color: #fff;
+    width: 219px;
+    height: 106px;
+    margin-left: 200px;
+    margin-top: 50px;
+} 
+.info-inside a{
+    text-decoration: none;
+    text-align: center;
+}
+.info-inside-a{
+    padding: 0 70px 0 70px ;
+    color: #fff;
+    background: #42af33;
+    
+}
+.title-1{
+    font-size: 16px;
+    padding-left: 10px;
+}
+.inside p{
+    font-size: 12px;
+    color: #90a0ba;
+    padding-left: 10px;
+}
+.info-inside-list{
+    display: flex;
+}
+.col-right{
+    padding-left: 30px;
+}
+.col-right-1{
+    padding-left: 45px;
+}
+@media(max-width: 740px){
+    .flim-text{
+        margin-left: 0px;
+        font-size: 16px;
+    }
+    .flim-text a{
+        font-size: 16px;
+    }
+    .span-title-1{
+        padding-left: 0px;
+    }
+    .flim-is-playing{
+        display: block;
+        margin-left: 0px;
+    }
+    .info-inside{
+        margin-left: 90px;
+    }
+    .flim-is-playing img{
+        width: 50%;
+    }
+}
