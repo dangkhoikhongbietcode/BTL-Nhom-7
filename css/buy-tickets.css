@@ -8,7 +8,9 @@
 .buy-tickets-container {
     background-image: url(https://www.bhdstar.vn/wp-content/themes/bhd/assets/images/movie-details-bg.jpg);
 }
-
+.buy-tickets-container .a1{
+    color: #fff;
+}
 .title a {
     font-size: 20px;
     margin-left: 12px;
@@ -30,7 +32,7 @@
     display: block;
     line-height: 22px;
     font-size: 18px;
-    color: #fff;
+    color: #fff !important;
     text-align: center;
     font-weight: 600;
     margin-top: 16px;
