@@ -394,5 +394,16 @@ font-weight: bold;
   .list-group{
     margin-left: -100px;
   }
-
+  .card-group{
+    display: block;
+    margin-left: 65px !important;
+    margin-right: 0px !important;
+  }
+  .title .a1{
+    color: #fff;
+  }
+  .card1{
+    height: 137px !important;
+  }
+   
 }

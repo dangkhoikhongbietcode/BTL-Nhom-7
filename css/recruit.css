@@ -61,4 +61,8 @@
         width: 360px;
         height: 162px;
     }
+    
+    .card2{
+        margin-left: 20px !important;
+    }
   }

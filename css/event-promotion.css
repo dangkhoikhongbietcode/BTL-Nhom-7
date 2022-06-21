@@ -143,3 +143,27 @@
     height: 11px;
     margin-right: 5px;
 }
+@media(max-width: 740px){
+    .cinema-list-3,
+    .cinema-list-2,
+    .cinema-list-1{
+        display: block;
+        margin-left: 50px;
+    }
+    .col-1{
+        margin-left: 15px;
+    }
+    .film-box{
+        margin-left: 0px;
+        display: table;
+        margin-left: 60px;
+    }
+    .film ul{
+        display: block;
+        
+    }
+    
+    .span-title{
+        color: yellow;
+    }
+}
