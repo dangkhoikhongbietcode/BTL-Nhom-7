@@ -137,3 +137,21 @@ i.fas.fa-h3:hover{
 .carousel-control-next, .carousel-control-prev{
     color: #666;
 }
+@media(max-width: 740px){
+    .cinema-list-3,
+    .cinema-list-2,
+    .cinema-list-1{
+        display: block;
+        margin-left: 50px;
+    }
+    .col-1{
+        margin-left: 20px;
+    }
+    .carousel-item .card-1{
+        margin-left: 0px;
+    }
+    .carousel-item.active{
+        margin-left: 90px;
+    }
+     
+}

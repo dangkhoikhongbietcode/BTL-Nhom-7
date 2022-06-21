@@ -360,7 +360,7 @@ margin-top: 10px;
 background-color: #42af33;
 color: #fff;
 border: 5px solid #42af33;
-  border-radius: 4px;
+border-radius: 4px;
 text-align: center;
 /* padding: 10px 5px; */
 font-size: 12px;
@@ -375,4 +375,24 @@ font-weight: bold;
 .pass-forgot:hover{
   color: #c8cd34;
 }
+@media(max-width: 740px){
+  .footer{
+    display: block;
+    padding: 0;
+  }
+   
+  .ti-menu{
+    margin-left: 0px;
+  }
+  .buy{
+    margin: 30px 0 0 0;
+  }
+  .btn-secondary{
+    margin-right: 0px;
+     
+  }
+  .list-group{
+    margin-left: -100px;
+  }
 
+}
