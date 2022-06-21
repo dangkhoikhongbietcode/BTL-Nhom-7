@@ -35,3 +35,9 @@ function showSlides(n) {
   menuBtn.classList.remove('close');
   closeBtn.classList.remove('open');
  })
+
+
+
+
+
+
