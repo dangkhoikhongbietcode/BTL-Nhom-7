@@ -375,6 +375,13 @@ font-weight: bold;
 .pass-forgot:hover{
   color: #c8cd34;
 }
+.flim-movie,
+.buy-tickets-container .upcoming-movie{
+  color: #b2d134 !important ;
+}
+.film-list .the-black-phone{
+  margin-left: 500px;
+}
 @media(max-width: 740px){
   .footer{
     display: block;

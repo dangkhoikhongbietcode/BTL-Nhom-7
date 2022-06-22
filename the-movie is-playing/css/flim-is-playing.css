@@ -1,8 +1,10 @@
 
 .flim-background{
     background-image: url(/img/movie-details-bg.jpg);
-     
     padding-top: 20px;
+}
+.flim-background-1{
+    height: 700px;
 }
  
 .flim-text{
