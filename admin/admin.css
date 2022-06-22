@@ -87,3 +87,56 @@ tbody ul li button{
     border: 1px solid #54ab35;
     border-radius: 4px;
 }
+
+/* Modal  */
+
+.add{
+    align-items: center;
+    display: flex;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(204, 204, 204, 0.432);
+    text-align: center;
+    display: none;
+}
+
+.parent{
+    display: block;
+    margin: auto;
+    background-color: white;
+    padding:1rem 2rem;
+}
+
+.parent div{
+    padding: 1rem;
+}
+
+.parent label{
+    width: 100px;
+    padding: .5rem;
+}
+
+input{
+    border: #ccc 1.5px solid;
+}
+
+.addBtn{
+    background-color: #54ab35;
+    padding: .5rem;
+    margin-left: 12px;
+    border-radius:5px;
+}
+
+.close{
+    color: red;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 1.5rem;
+}
+
+.active{
+    display: flex;
+}
