@@ -17,6 +17,9 @@ function signup(e) {
     if (name=="" || email==""|| passw=="" || passw1=="" ){
       alert("Vui lòng điền đầy đủ thông tin")
     }
+    else if(passw!=passw1){
+      alert("Mật khẩu không trùng khớp")
+    }
     else{
     data.push(user);
     var json = JSON.stringify(data);
@@ -45,7 +48,7 @@ function signup(e) {
         window.location.href="http://127.0.0.1:5500/index.html"
     } 
     else if(
-      email2=="tranvankhanh2812002@gmail.com" &&
+      email2=="danhlinh20082002@gmail.com" &&
       password2=="123456"
       // alert('dang nhap thanh cong');
     ) {

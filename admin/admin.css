@@ -67,3 +67,23 @@
     border-bottom-width: 0px;
     color: white;
 }
+.icons-list{
+    display: none;
+}
+.btn-group a{
+    color: #fff;
+    text-decoration: none;
+}
+.btn-group a:hover{
+    color: #54ab35;
+}
+tbody ul li{
+    list-style: none;
+}
+tbody ul li button{
+    color: #fff;
+    padding: 5px;
+    margin: 2px;
+    border: 1px solid #54ab35;
+    border-radius: 4px;
+}

@@ -68,12 +68,9 @@
   <div class="admin-nav">
     <div class="btn-group" role="group" aria-label="Basic example">
       <button type="button" class="btn btn-primary admin-btn btn-1"><a href="./admin-film.html">Phim</a></button>
-      <button type="button" class="btn btn-primary admin-btn btn-2"><a href="./admin-movie-schedule.html">Lịch
-          chiếu</a></button>
-      <button type="button" class="btn btn-primary admin-btn btn-3"><a href="./admin-event.html">Khuyến mãi | Sự
-          kiện</a></button>
-      <button type="button" class="btn btn-primary admin-btn btn-last"><a href="./admin-users.html">Người
-          dùng</a></button>
+      <button type="button" class="btn btn-primary admin-btn btn-2"><a href="./admin-movie-schedule.html">Lịch chiếu</a></button>
+      <button type="button" class="btn btn-primary admin-btn btn-3"><a href="./admin-event.html">Khuyến mãi | Sự kiện</a></button>
+      <button type="button" class="btn btn-primary admin-btn btn-last"><a href="./admin-users.html">Người dùng</a></button>
     </div>
   </div>
   <div class="admin-container">
@@ -88,8 +85,10 @@
           <tr>
             <th>STT</th>
             <th>Tên phim</th>
-            <th>Thể loại</th>
             <th>Ngày chiếu</th>
+            <th>Giờ chiếu</th>
+            <th>Mã rạp</th>
+            <th>Mã phòng chiếu</th>
             <th>Thao tác</th>
           </tr>
         </thead>
@@ -97,26 +96,44 @@
           <tr class="td">
             <td scope="row">1</td>
             <td>Doctor Strange 2</td>
-            <td>Kinh dị</td>
             <td>9/5/2022</td>
+            <td>12:50</td>
+            <td>BHDPNT</td>
+            <td>04</td>
             <td>
               <ul>
-                <li><button>Sửa</button></li>
-                <li><button>Xoá</button></li>
+                  <li><button class="admin-btn">Sửa</button></li>
+                  <li><button class="admin-btn">Xoá</button></li>
               </ul>
-            </td>
+          </td>
           </tr>
           <tr>
-            <td scope="row">1</td>
-            <td>Doctor Strange 2</td>
-            <td>Kinh dị</td>
-            <td>9/5/2022</td>
+            <td scope="row">2</td>
+            <td>Jurassic world dominion</td>
+            <td>10/6/2022</td>
+            <td>13:20</td>
+            <td>BHDPNT</td>
+            <td>02</td>
             <td>
               <ul>
-                <li><button>Sửa</button></li>
-                <li><button>Xoá</button></li>
+                  <li><button class="admin-btn">Sửa</button></li>
+                  <li><button class="admin-btn">Xoá</button></li>
               </ul>
-            </td>
+          </td>
+          </tr>
+          <tr>
+            <td scope="row">3</td>
+            <td>Em và Trịnh</td>
+            <td>19/6/2022</td>
+            <td>9:30</td>
+            <td>BHDPNT</td>
+            <th>01</th>
+            <td>
+              <ul>
+                  <li><button class="admin-btn">Sửa</button></li>
+                  <li><button class="admin-btn">Xoá</button></li>
+              </ul>
+          </td>
           </tr>
         </tbody>
       </table>
