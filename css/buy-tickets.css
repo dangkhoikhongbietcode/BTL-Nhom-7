@@ -103,10 +103,12 @@
 .card{
     margin-right: 15px;
 }
+.title .active-1,
 .title .active1{
     color: #d4dd29!important;
     border-bottom: 1px solid #d4dd29;
 }
+ 
 .title .non-active:hover{
     color: #d4dd29!important;
     border-bottom: 1px solid #d4dd29;

@@ -1,0 +1,35 @@
+.theater{
+    margin-left: 200px;
+}
+.list-theater ul,
+.theater ul a{
+    text-decoration: none;
+    color: #fff;
+}
+.list-theater ul,
+.theater ul{
+    list-style: none;
+    /* max-width: 600px; */
+    font-size: 14px;
+    font-weight: 700;
+    background: #263247;
+    display: flex;
+    
+}
+.theater ul li{
+    padding: 20px;
+    margin-right: 20px;
+    
+}
+.theater .hcm{
+    background: #42af33;
+}
+.list-pin{
+    display: flex;
+}
+.ti-pin-1{
+    padding-right: 20px;
+}
+.list-theater{
+    display: block;
+}

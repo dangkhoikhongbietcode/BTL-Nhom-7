@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/responsive.css">
+    <link rel="stylesheet" href="/css/font/themify-icons-font/themify-icons/themify-icons.css">
+    <link rel="stylesheet" href="/css/buy-tickets.css">
+    <link rel="stylesheet" href="/showtimes-by-theater/showtimes-by-theater.css">
+    <title>Lịch chiếu theo rạp</title>
+</head>
+
+<body>
+
+    <head>
+        <div class="header">
+            <div class="dropdown">
+                <div class="icons">
+                    <div class="icons-list">
+                        <div class="instagram">
+                            <i class="ti-instagram"></i>
+                        </div>
+                        <div class="tiktok">
+                            <i class="ti-tumblr-alt"></i>
+                        </div>
+                        <div class="youtube">
+                            <i class="ti-youtube"></i>
+                        </div>
+                        <div class="facebook">
+                            <i class="ti-facebook"></i>
+                        </div>
+                    </div>
+                    <!-- <button class="login">ĐĂNG NHẬP</button> -->
+                    <a class="btn btn-secondary login" href="#" role="button" id="dropdownMenuLink"
+                        data-bs-toggle="dropdown" aria-expanded="false">
+                        <br>
+                        <p>ĐĂNG NHẬP</p>
+                    </a>
+                    <ul class="dropdown-menu login-form" aria-labelledby="dropdownMenuLink">
+                        <li><input type="text" placeholder="Email" class="login-input dropdown-item" id="email2">
+                        <li><input type="text" placeholder="Password" class="login-input dropdown-item" id="password2">
+                        <li class="li-3"><button type="submit" class="login-submit" onclick="login1()">ĐĂNG
+                                NHẬP</button><a href="#" class="pass-forgot">Quên mật khẩu</a>
+                        <li><a class="dropdown-item login-register" href="/sign-up.html">ĐĂNG KÝ THÀNH VIÊN</a></li>
+                    </ul>
+                </div>
+            </div>
+            <a class="btn btn-secondary ti-menu" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown"
+                aria-expanded="false">
+                <br>
+                <p>MENU</p>
+            </a>
+
+            <a class="btn btn-secondary ti-close" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown"
+                aria-expanded="false">
+                <br>
+                <p>CLOSE</p>
+            </a>
+            <button class="buy"><a href="/buy-tickets.html" class="buy-tickets-btn">MUA VÉ</a></button>
+            <a href="/index.html"><img class="logo" src="/img/logo.png" alt="loogo"></a>
+            <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                <li><a class="dropdown-item" href="/buy-tickets.html">LỊCH CHIẾU</a></li>
+                <li><a class="dropdown-item" href="/cinema-system.html">HỆ THỐNG RẠP</a></li>
+                <li><a class="dropdown-item" href="/event-promotion.html">KHUYẾN MÃI | SỰ KIỆN</a></li>
+                <li><a class="dropdown-item" href="/service.html">DỊCH VỤ QUẢNG CÁO</a></li>
+                <li><a class="dropdown-item" href="/recruit.html">TUYỂN DỤNG</a></li>
+                <li><a class="dropdown-item" href="/about.html">VỀ CHÚNG TÔI</a></li>
+            </ul>
+        </div>
+    </head>
+
+    <!-- Container  -->
+    <div class="buy-tickets-container">
+        <div class="title">
+            <i class="fas fa-h3 "><a href="#" class="non-active">Lịch chiếu theo phim</a> </i>
+            <span class="span-title">|</span>
+            <i class="fas fa-h3 "><a href="#" class="non-active active-1">Lịch chiếu theo rạp</a> </i>
+            <span class="span-title">|</span>
+            <i class="fas fa-h3 "><a href="#" class="non-active">Lịch chiếu theo giờ</a> </i>
+        </div>
+        <div>
+            <div class="theater">
+                <ul>
+                    <li class="hcm"><a href="">
+                            <div class="list-pin">
+                                <div class=" ti-pin-1">
+                                    <i class="ti-pin-alt"></i>
+                                </div>
+                                <span>TP Hồ Chí Minh</span>
+                            </div>
+                        </a></li>
+                    <li><a href="">
+                            <div class="list-pin">
+                                <div class=" ti-pin-1">
+                                    <i class="ti-pin-alt"></i>
+                                </div>
+                                <span>TP Hà Nội</span>
+                            </div>
+                        </a></li>
+
+                    <li><a href="">
+                            <div class="list-pin">
+                                <div class=" ti-pin-1">
+                                    <i class="ti-pin-alt"></i>
+                                </div>
+                                <span>TP Huế</span>
+                            </div>
+                        </a></li>
+                    <li><a href="">
+                            <div class="list-pin">
+                                <div class=" ti-pin-1">
+                                    <i class="ti-pin-alt"></i>
+                                </div>
+                                <span>TP Long Khánh</span>
+                            </div>
+                        </a></li>
+                </ul>
+            </div>
+            <div class="list-theater">
+                <ul>
+                    <div>
+                        <li>
+                            <div>
+                                <h4>BHD Star 3.2</h4>
+                                <p>Tang 5, Sieu Thi Vincom 3/2, 3C Duong 3/2, Quan 10, TH HCM </p>
+                                <div class=" ti-pin-1">
+                                    <i class="ti-pin-alt">Xem</i>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div>
+                                <h4>BHD Star Bitexco</h4>
+                                <p>Tang 3 & 4,TTTM ICON 68, 2 Hai Trieu,Quan 1,TP HCM</p>
+                                <div class=" ti-pin-1">
+                                    <i class="ti-pin-alt">Xem</i>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div>
+                                <h4>BHD Star Pham Hung</h4>
+                                <p>Tang 4,TTTM Satra Pham Hung,C6/27 Pham Hung,Binh Chanh, TH HCM </p>
+                                <div class=" ti-pin-1">
+                                    <i class="ti-pin-alt">Xem</i>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div>
+                                <h4>BHD Star Quang Trung</h4>
+                                <p>Tang B1&B2,TTTM Vincom,190 Quang Trung, Go Vap, TP HCM</p>
+                                <div class=" ti-pin-1">
+                                    <i class="ti-pin-alt">Xem</i>
+                                </div>
+                            </div>
+                        </li>
+                    </div>
+                    <div>
+                        <li>
+                            <div>
+                                <h4>BHD Star Thao Dien</h4>
+                                <p>
+                                    Tầng 5, TTTM Vincom Mega Mall, 159 Xa lộ Hà Nội, Thảo Điền, Quận 2, Thành phố Hồ Chí
+                                    Minh</p>
+                                <div class=" ti-pin-1">
+                                    <i class="ti-pin-alt">Xem</i>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div>
+                                <h4>BHD Star Le Van Viet</h4>
+                                <p>Tang 4, TTTM Vincom Plaza Le Van Viet, 50 Le Van Viet, Quan 9, TP.HCM
+
+                                </p>
+                                <div class=" ti-pin-1">
+                                    <i class="ti-pin-alt">Xem</i>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div>
+                                <h4>BHD Star Pham Ngoc Thach</h4>
+                                <p>
+                                    Tang 8, TTTM Vincom, so 2 Pham Ngoc Thach, Dong Da, Ha Noi
+
+ 
+                                </p>
+                                <div class=" ti-pin-1">
+                                    <i class="ti-pin-alt">Xem</i>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div>
+                                <h4>BHD Star Hue</h4>
+                                <p>
+                                    Tang 5, Vincom Hue, 50A Hung Vuong, Phu Nhuan, TP Thua Thien Hue
+                                 </p>
+                                <div class=" ti-pin-1">
+                                    <i class="ti-pin-alt">Xem</i>
+                                </div>
+                            </div>
+                        </li>
+                    </div>
+                    <div>
+                        <li>
+                            <div>
+                                <h4>BHD Star Discovery</h4>
+                                <p>
+                                    Tang 8, Toa nha Discovery 302 Cau Giay , Ha Noi
+                                </p>
+                                <div class=" ti-pin-1">
+                                    <i class="ti-pin-alt">Xem</i>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div>
+                                <h4>BHD Star The Garden</h4>
+                                <p>
+                                    Tang 4, TTTM The Garden, Khu Do Thi My Dinh, Ha Noi
+
+                                </p>
+                                <div class=" ti-pin-1">
+                                    <i class="ti-pin-alt">Xem</i>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div>
+                                <h4>BHD Star Long Khanh</h4>
+                                <p>430 Ho Thi Huong, KP 6, Phuong Xuan An, Thanh Pho Long Khanh, Tinh Dong Nai</p>
+                                <div class=" ti-pin-1">
+                                    <i class="ti-pin-alt">Xem</i>
+                                </div>
+                            </div>
+                        </li>
+                        
+                    </div>
+                </ul>
+            </div>
+        </div>
+
+    </div>
+    <div class="events">
+        <div class="event-titles">
+            <i class="fas fa-h1"><a href="#">khuyến mãi</a></i>
+            <span class="span-title">|</span>
+            <i class="fas fa-h1"><a href="#">sự kiện</a></i>
+        </div>
+        <div id="carouselId" class="carousel slide" data-bs-ride="carousel">
+            <!-- <div class="carousel-inner promotion" role="listbox">
+                    <ul>
+                        <li class="carousel-item active">
+                            <a href="#"><img src="./img/promotion1.jpeg" alt="" class="promote-pics"></a>
+                        </li>
+                        <li class="carousel-item">
+                            <a href="#"><img src="./img/promotion2.png" alt="" class="promote-pics"></a>
+                        </li>
+                        <li class="carousel-item">
+                            <a href="#"><img src="./img/promotion3.jpeg" alt="" class="promote-pics"></a>
+                        </li>
+                    </ul>
+                </div> -->
+
+            <div class="card-group">
+                <div class="card">
+                    <img class="card-img-top" src="/img/promotion1.jpeg" alt="Card image cap">
+
+                </div>
+                <div class="card">
+                    <img class="card-img-top" src="/img/promotion2.png" alt="Card image cap">
+
+                </div>
+
+                <div class="card">
+                    <img class="card-img-top" src="/img/promotion3.jpeg" alt="Card image cap">
+
+                </div>
+            </div>
+        </div>
+        <div class="circle-btn">
+            <div style="text-align:center">
+                <span class="dot" onclick="currentSlide(1)"></span>
+                <span class="dot" onclick="currentSlide(2)"></span>
+                <span class="dot" onclick="currentSlide(3)"></span>
+            </div>
+        </div>
+    </div>
+    </div>
+
+    </div>
+    <div style="text-align: center; background-image: url(/img/bg-grid.jpg);"><img src="./img/logo.png" alt=""></div>
+
+    <div class="footer">
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item">
+                <h3>VỀ BDH STAR</h3>
+            </li>
+            <li class="list-group-item"><a href="">Hệ Thống Rạp</a></li>
+            <li class="list-group-item"><a href="">Tuyển Dụng</a></li>
+            <li class="list-group-item"><a href="">Liên Hệ</a></li>
+            <li class="list-group-item"><a href=""></a></li>
+        </ul>
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item">
+                <h3>QUY ĐỊNH & ĐIỀU KHOẢN</h3>
+            </li>
+            <li class="list-group-item"><a href="">Quy định thành viên</a></li>
+            <li class="list-group-item"><a href="">Điều khoản</a></li>
+            <li class="list-group-item"><a href="">Hướng dẫn đặt vé trực tuyến</a></li>
+            <li class="list-group-item"><a href="">Quy định và chính sách chung</a></li>
+            <li class="list-group-item"><a href="">Chính sách bảo vệ thông tin của người tiêu dùng</a></li>
+        </ul>
+        <h3 class="bhd-cineplex">© 2015 BHD Star Cineplex</h3>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+        crossorigin="anonymous"></script>
+    <!-- <script src="./js/java.js"></script> -->
+    <script src="./js/buy-tickets.js"></script>
+    <script src="./js/sign-up.js"></script>
+</body>
+
+</html>
