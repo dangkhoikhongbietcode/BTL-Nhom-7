@@ -412,5 +412,8 @@ font-weight: bold;
   .card1{
     height: 137px !important;
   }
+  .film{
+    display: block !important;
+  }
    
 }

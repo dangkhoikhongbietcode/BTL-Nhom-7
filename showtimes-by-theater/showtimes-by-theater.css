@@ -1,5 +1,7 @@
+.list-theater,
 .theater{
     margin-left: 200px;
+    /* margin-right: 200px; */
 }
 .list-theater ul,
 .theater ul a{
@@ -12,14 +14,15 @@
     /* max-width: 600px; */
     font-size: 14px;
     font-weight: 700;
-    background: #263247;
+   
     display: flex;
     
 }
 .theater ul li{
     padding: 20px;
     margin-right: 20px;
-    
+    max-width: 260px;
+    background: #263247;
 }
 .theater .hcm{
     background: #42af33;
@@ -30,6 +33,49 @@
 .ti-pin-1{
     padding-right: 20px;
 }
-.list-theater{
+.list-theater ul{ 
     display: block;
+}
+.list-theater-3,
+.list-theater-2,
+.list-theater-1{
+    display: flex;
+    
+}
+
+.list-theater-text{
+    max-width: 260px;
+    height: 180px;
+    line-height: 30px;
+    padding: 20px;
+    background: #263247;
+}
+.list-theater-text li{
+    margin: 10px;
+}
+.list-theater-text h4{
+    font-size: 14px;
+}
+.list-theater-text p{
+    font-size: 12px;
+    color: #90a0ba;
+}
+.list-theater-text .ti-pin-1{
+    text-align: center;
+    background: #263247;
+}
+.list-theater-text .ti-pin-1:hover{
+    background: #42af33;
+    padding: 20px;
+}
+.list-theater-3 li,
+.list-theater-2 li,
+.list-theater-1 li{
+    margin: 20px 30px 10px 0;
+     
+}
+@media(max-width: 740px){
+    
+         
+  
 }
