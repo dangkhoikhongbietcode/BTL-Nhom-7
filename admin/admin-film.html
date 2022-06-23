@@ -76,7 +76,7 @@
   <div class="admin-container">
     <div class="admin-manipulation">
       <ul>
-        <li><button>+Thêm</button></li>
+        <li><button class="addBtn">+Thêm</button></li>
       </ul>
     </div>
     <div class="element-list">
@@ -90,8 +90,8 @@
             <th>Thao tác</th>
           </tr>
         </thead>
-        <tbody>
-          <tr class="td">
+        <tbody class="showdata">
+          <!-- <tr class="td">
             <td scope="row">1</td>
             <td>Doctor Strange 2</td>
             <td>Kinh dị</td>
@@ -126,14 +126,56 @@
                     <li><button class="admin-btn">Xoá</button></li>
                 </ul>
             </td>
-          </tr>
+          </tr> -->
         </tbody>
       </table>
 
     </div>
   </div>
+  <!-- Modal Input Thêm -->
+  <div class="add">
+    <div class="parent">
+     <div>
+       <label for="">Tên phim</label>
+       <input type="text"/>
+     </div>
+     <div>
+       <label for="">Thể loại</label>
+       <input type="text"/>
+     </div>
+     <div>
+       <label for="">Ngày chiếu</label>
+       <input type="text"/>
+     </div>
+    <div>
+     <button class="addBtns">Thêm </button>
+     <button class="close">X</button>
+    </div>
+    </div>
+   </div>
 
+  <!-- Sua du lieu -->
 
+  <div class="add">
+    <div class="parent">
+     <div>
+       <label for="">Tên phim</label>
+       <input class="editInput" type="text"/>
+     </div>
+     <div>
+       <label for="">Thể loại</label>
+       <input class="editInput" type="text"/>
+     </div>
+     <div>
+       <label for="">Ngày chiếu</label>
+       <input class="editInput" type="text"/>
+     </div>
+    <div>
+     <button class="fixBtns">Sửa </button>
+     <button class="closeFix">X</button>
+    </div>
+    </div>
+   </div>
   <!-- Footer  -->
   <div style="text-align: center; background-image: url(/img/bg-grid.jpg);"><img src="./img/logo.png" alt=""></div>
   <div class="footer">
@@ -169,7 +211,8 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
     crossorigin="anonymous"></script>
-  <script src="../js/java.js"></script>
+  <!-- <script src="../js/java.js"></script> -->
+  <script src="./admin-film.js"></script>
 </body>
 
 </html>
