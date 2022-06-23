@@ -81,7 +81,7 @@ function signup(e) {
       // alert('dang nhap thanh cong');
     ) {
       alert("dang nhap thanh cong");
-        window.location.href="http://127.0.0.1:5500/admin/admin.html"
+        window.location.href="http://127.0.0.1:5500/admin/admin-film.html"
     }
     else {
       alert("dang nhap that bai");
