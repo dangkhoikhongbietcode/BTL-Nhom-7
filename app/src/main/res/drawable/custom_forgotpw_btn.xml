@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<style android:name="NoButtonStyle"
+    android:style="@android:style/Widget.Button"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:name="android:background">@null</item>
+    <item android:name="android:minHeight">0dp</item>
+    <item android:name="android:minWidth">0dp</item>
+    <item android:name="android:padding">0dp</item>
+</style>
+
