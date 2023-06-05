@@ -1,38 +1,55 @@
 package com.example.btl_nhom_7;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.viewpager.widget.ViewPager;
-import android.os.Bundle;
-import java.util.ArrayList;
-import java.util.List;
-import me.relex.circleindicator.CircleIndicator;
-import com.example.btl_nhom_7.R;
 
-import com.example.btl_nhom_7.Photo.model.Photo;
-import com.example.btl_nhom_7.Photo.adapter.PhotoViewPagerAdapter;
+import android.annotation.SuppressLint;
+import android.os.Bundle;
+
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
+
+import com.example.btl_nhom_7.databinding.ActivityHomeBinding;
+import com.example.btl_nhom_7.fragment.CartFragment;
+import com.example.btl_nhom_7.fragment.HomeFragment;
+import com.example.btl_nhom_7.fragment.ProfileFragment;
+import com.example.btl_nhom_7.fragment.WarrantyFragment;
+
 public class Home extends AppCompatActivity {
 
-    private ViewPager mViewPager;
-    private CircleIndicator mCircleIndicator;
-    private List<Photo> mListPhoto;
+    ActivityHomeBinding binding;
+
+
+    @SuppressLint("NonConstantResourceId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_home);
-        mViewPager = findViewById(R.id.view_page);
-        mCircleIndicator = findViewById(R.id.circle_indicator);
-        mListPhoto = getListPhoto();
+        binding = ActivityHomeBinding.inflate(getLayoutInflater());
+        setContentView(binding.getRoot());
+        replaceFragment(new HomeFragment());
 
-        PhotoViewPagerAdapter adapter = new PhotoViewPagerAdapter(mListPhoto);
-        mViewPager.setAdapter(adapter);
-        mCircleIndicator.setViewPager(mViewPager);
+        binding.bottomNavigationView.setOnItemSelectedListener(item -> {
+            if (item.getItemId() == R.id.home) {
+                replaceFragment(new HomeFragment());
+            } else if (item.getItemId() == R.id.warranty) {
+                replaceFragment(new WarrantyFragment());
+            } else if (item.getItemId() == R.id.cart) {
+                replaceFragment(new CartFragment());
+            } else if (item.getItemId() == R.id.profile) {
+                replaceFragment(new ProfileFragment());
+            }
+            return true;
+        });
+
+
     }
-    private List<Photo> getListPhoto(){
-        List<Photo> list = new ArrayList<>();
-        list.add(new Photo(R.drawable.bgimg_1));
-        list.add(new Photo(R.drawable.bgimg_2));
-        list.add(new Photo(R.drawable.bgimg_3));
-        list.add(new Photo(R.drawable.bgimg_4));
 
-        return list;
+
+
+
+    private void replaceFragment(Fragment fragment) {
+        FragmentManager fragmentManager = getSupportFragmentManager();
+        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+        fragmentTransaction.replace(binding.frameLayout.getId(), fragment);
+        fragmentTransaction.commit();
     }
 }
