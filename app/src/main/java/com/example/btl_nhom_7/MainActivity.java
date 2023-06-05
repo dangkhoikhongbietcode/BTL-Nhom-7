@@ -10,6 +10,8 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.btl_nhom_7.Motor.MotorActivity;
+
 public class MainActivity extends AppCompatActivity {
     Button loginBtn,forgotPWBtn;
     TextView tvForgotPW;
@@ -23,7 +25,7 @@ public class MainActivity extends AppCompatActivity {
         loginBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent= new Intent(MainActivity.this , Home.class);
+                Intent intent= new Intent(MainActivity.this , MotorActivity.class);
                 startActivity(intent);
             }
         });
