@@ -1,0 +1,56 @@
+package com.example.btl_nhom_7.User.database;
+
+import android.annotation.SuppressLint;
+import android.content.ContentValues;
+import android.content.Context;
+import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
+import android.database.sqlite.SQLiteOpenHelper;
+
+import com.example.btl_nhom_7.User.model.User;
+
+public class UserDatabaseHelper extends SQLiteOpenHelper {
+    private static final String DATABASE_NAME = "motor.db";
+    private static final int DATABASE_VERSION = 2;
+
+    public UserDatabaseHelper(Context context) {
+        super(context, DATABASE_NAME, null, DATABASE_VERSION);
+    }
+
+    @Override
+    public void onCreate(SQLiteDatabase db) {
+        // Tạo bảng
+        String createTableQuery = "CREATE TABLE IF NOT EXISTS user (id INTEGER PRIMARY KEY AUTOINCREMENT," +
+                "phoneNumber TEXT , password TEXT)";
+        db.execSQL(createTableQuery);
+    }
+
+    @Override
+    public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
+        // Xóa bảng xe máy nếu đã tồn tại và tạo lại
+        String dropTableQuery = "DROP TABLE IF EXISTS user";
+        db.execSQL(dropTableQuery);
+        onCreate(db);
+    }
+    public void addUser(User user){
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues values = new ContentValues();
+        values.put("phoneNumber", user.getPhoneNumber());
+        values.put("password", user.getPassword());
+        db.insert("user", null, values);
+        db.close();
+    }
+    public User getUser(String phoneNumber) {
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor cursor = db.query("user", null, "phoneNumber" + "=?",
+                new String[]{phoneNumber}, null, null, null, null);
+        User user = null;
+        if (cursor != null && cursor.moveToFirst()) {
+            String password = cursor.getString(cursor.getColumnIndexOrThrow("password"));
+            user = new User(phoneNumber, password);
+        }
+        cursor.close();
+        db.close();
+        return user;
+    }
+}

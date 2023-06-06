@@ -3,14 +3,21 @@ package com.example.btl_nhom_7;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.annotation.SuppressLint;
+import android.content.ContentValues;
+import android.content.Context;
+import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.text.method.PasswordTransformationMethod;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.Toast;
 
+import com.example.btl_nhom_7.User.database.UserDatabaseHelper;
 import com.example.btl_nhom_7.User.model.User;
 
 public class SignUpActivity extends AppCompatActivity {
@@ -18,7 +25,8 @@ public class SignUpActivity extends AppCompatActivity {
     ImageView imageX8Char,imageXCapsChar,imageXNumberChar,
             imageTick8Char,imageTickCapsChar,imageTickNumberChar;
     EditText editPhoneNumberSignUp,editPasswordSignUp;
-    @SuppressLint("MissingInflatedId")
+    Context context;
+    UserDatabaseHelper userDatabaseHelper;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -26,12 +34,14 @@ public class SignUpActivity extends AppCompatActivity {
         signUpBtn = (Button) findViewById(R.id.signUpBtn);
         editPhoneNumberSignUp = (EditText)findViewById(R.id.editPhoneNumberSignUp);
         editPasswordSignUp = (EditText)findViewById(R.id.editPasswordSignUp);
+        editPasswordSignUp.setTransformationMethod(PasswordTransformationMethod.getInstance());
         imageX8Char = (ImageView)findViewById(R.id.imageX8Char);
         imageXCapsChar = (ImageView)findViewById(R.id.imageXCapsChar);
         imageXNumberChar = (ImageView)findViewById(R.id.imageXNumberChar);
         imageTick8Char = (ImageView)findViewById(R.id.imageTick8Char);
         imageTickCapsChar = (ImageView)findViewById(R.id.imageTickCapsChar);
         imageTickNumberChar = (ImageView)findViewById(R.id.imageTickNumberChar);
+        userDatabaseHelper = new UserDatabaseHelper(this);
         editPasswordSignUp.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {}
@@ -45,11 +55,25 @@ public class SignUpActivity extends AppCompatActivity {
         signUpBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                String phoneNumber = editPhoneNumberSignUp.getText().toString();
+                String password = editPasswordSignUp.getText().toString();
+                if (checkPassword()&&checkPhoneNumber()){
+                    User existingUser = userDatabaseHelper.getUser(phoneNumber);
+                    if (existingUser != null) {
+                        Toast.makeText(SignUpActivity.this, "Số điện thoại này đã được sử dụng", Toast.LENGTH_SHORT).show();
+                    }
+                    else {
+                        // Tạo người dùng mới và thêm vào CSDL
+                        User newUser = new User(phoneNumber, password);
+                        userDatabaseHelper.addUser(newUser);
+                        Toast.makeText(SignUpActivity.this, "Đăng ký thành công", Toast.LENGTH_SHORT).show();
+                        finish();
+                    }
+                }
             }
         });
     }
-    public void checkPassword(){
+    public boolean checkPassword(){
         String phoneNumber = editPhoneNumberSignUp.getText().toString();
         String password =  editPasswordSignUp.getText().toString();
         User user = new User(phoneNumber,password);
@@ -65,5 +89,26 @@ public class SignUpActivity extends AppCompatActivity {
             imageXNumberChar.setVisibility(View.INVISIBLE);
             imageTickNumberChar.setVisibility(View.VISIBLE);
         }
+        if (user.checkValid8Char()&&user.checkValidCapsChar()&&user.checkValidNumberChar())
+            return true;
+        else {
+            Toast.makeText(getApplicationContext(),"Mật khẩu chưa đủ mạnh",Toast.LENGTH_SHORT).show();
+            return false;
+        }
+    }
+    public boolean checkPhoneNumber() {
+        String phoneNumber = editPhoneNumberSignUp.getText().toString();
+        boolean hasLetter = phoneNumber.matches(".[*a-zA-Z].*");
+        if (hasLetter) {
+            Toast.makeText(getApplicationContext(), "Số điện thoại không được bao gồm chữ cái",
+                    Toast.LENGTH_SHORT).show();
+            return false;
+        }
+        else if (phoneNumber.length()!=10) {
+            Toast.makeText(getApplicationContext(), "Số điện thoại không hợp lệ",
+                    Toast.LENGTH_SHORT).show();
+            return false;
+        }
+        return true;
     }
 }

@@ -3,10 +3,25 @@ package com.example.btl_nhom_7.User.model;
 public class User {
     private String phoneNumber;
     private String password;
+    private int id;
+
+    public User(int id,String phoneNumber, String password) {
+        this.id = id;
+        this.phoneNumber = phoneNumber;
+        this.password = password;
+    }
 
     public User(String phoneNumber, String password) {
         this.phoneNumber = phoneNumber;
         this.password = password;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getPhoneNumber() {
