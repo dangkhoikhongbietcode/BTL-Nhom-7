@@ -53,4 +53,31 @@ public class UserDatabaseHelper extends SQLiteOpenHelper {
         db.close();
         return user;
     }
+    public int getUserIdByPhoneNumber(String phoneNumber) {
+        SQLiteDatabase db = this.getReadableDatabase();
+        int userId = -1; // Giá trị mặc định khi không tìm thấy
+
+        Cursor cursor = db.query("user", new String[] {"id"},
+                "phoneNumber"+ "=?", new String[] {phoneNumber},
+                null, null, null, null);
+
+        if (cursor != null && cursor.moveToFirst()) {
+            userId = cursor.getInt(cursor.getColumnIndexOrThrow("id"));
+            cursor.close();
+        }
+
+        db.close();
+        return userId;
+    }
+    public void updatePassword(int id, String newPassword) {
+        SQLiteDatabase db = this.getWritableDatabase();
+
+        ContentValues values = new ContentValues();
+        values.put("password", newPassword);
+
+        // Cập nhật mật khẩu mới dựa vào id
+        db.update("user", values, "id = ?", new String[]{String.valueOf(id)});
+
+        db.close();
+    }
 }
