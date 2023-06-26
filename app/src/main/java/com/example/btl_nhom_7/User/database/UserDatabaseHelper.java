@@ -27,7 +27,6 @@ public class UserDatabaseHelper extends SQLiteOpenHelper {
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
-        // Xóa bảng xe máy nếu đã tồn tại và tạo lại
         String dropTableQuery = "DROP TABLE IF EXISTS user";
         db.execSQL(dropTableQuery);
         onCreate(db);
