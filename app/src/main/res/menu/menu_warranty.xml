@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.example.btl_nhom_7.fragment.WarrantyFragment">
+
+    <item
+        android:id="@+id/mnu_warranty"
+        android:orderInCategory="200"
+        android:title="Lịch bảo hành"
+        android:icon="@drawable/baseline_event_note_24"
+        app:showAsAction="ifRoom"/>
+</menu>

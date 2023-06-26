@@ -78,11 +78,11 @@ public class MotorActivity extends AppCompatActivity {
             }
         });
         List<String> namesToDelete = new ArrayList<>();
-//        namesToDelete.add("Honda");
-//        namesToDelete.add("Yamaha");
-//        namesToDelete.add("Suzuki");
-//        namesToDelete.add("Kawasaki");
-//        deleteMultipleMotors(namesToDelete);
+        namesToDelete.add("Honda");
+        namesToDelete.add("Yamaha");
+        namesToDelete.add("Suzuki");
+        namesToDelete.add("Kawasaki");
+        deleteMultipleMotors(namesToDelete);
         addMotor("Honda", 1000);
         addMotor("Yamaha", 1500);
         addMotor("Suzuki", 1200);
