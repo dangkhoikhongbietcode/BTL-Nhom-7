@@ -1,5 +1,6 @@
 package com.example.btl_nhom_7.fragment;
 
+import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
@@ -7,18 +8,25 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.btl_nhom_7.Motor.Motor;
 import com.example.btl_nhom_7.Motor.MotorDatabaseHelper;
 import com.example.btl_nhom_7.R;
+import com.google.gson.Gson;
 
 public class MotorDetailActivity extends AppCompatActivity {
 
     private TextView textView;
     private MotorDatabaseHelper databaseHelper;
+    Motor motor;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_motor_detail);
+        Intent intent = getIntent();
+        String motorstr = intent.getStringExtra("Motor");
+        Gson gson = new Gson();
+        motor = gson.fromJson(motorstr, Motor.class);
 
         textView = findViewById(R.id.textView);
         databaseHelper = new MotorDatabaseHelper(this);
@@ -27,8 +35,8 @@ public class MotorDetailActivity extends AppCompatActivity {
         String selectedItem = getIntent().getStringExtra("selectedItem");
 
         // Hiển thị chi tiết của xe máy được chọn
-        String price = getMotorPrice(selectedItem);
-        textView.setText("Chi tiết của xe máy: " + selectedItem + "\nGiá: " + price);
+
+        textView.setText("Chi tiết của xe máy: " + motor.getName() + "\nGiá: " + motor.getPrice());
     }
 
     // Lấy giá của xe máy từ cơ sở dữ liệu
