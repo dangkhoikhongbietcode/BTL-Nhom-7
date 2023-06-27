@@ -1,4 +1,4 @@
-package com.example.btl_nhom_7.Motor;
+package com.example.btl_nhom_7.fragment;
 
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
@@ -7,6 +7,7 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.btl_nhom_7.Motor.MotorDatabaseHelper;
 import com.example.btl_nhom_7.R;
 
 public class MotorDetailActivity extends AppCompatActivity {

@@ -1,13 +1,15 @@
 package com.example.btl_nhom_7.fragment;
 
 import android.os.Bundle;
-import androidx.fragment.app.Fragment;
-import androidx.viewpager.widget.ViewPager;
-
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.RecyclerView;
+import androidx.viewpager.widget.ViewPager;
+
+import com.example.btl_nhom_7.Motor.MotorAdapter;
 import com.example.btl_nhom_7.Photo.adapter.PhotoViewPagerAdapter;
 import com.example.btl_nhom_7.Photo.model.Photo;
 import com.example.btl_nhom_7.R;
@@ -37,7 +39,13 @@ public class HomeFragment extends Fragment {
     private ViewPager mViewPager;
     private CircleIndicator mCircleIndicator;
     private List<Photo> mListPhoto;
+
+    private RecyclerView rcv;
+
     ActivityHomeBinding binding;
+
+    private MotorAdapter motorAdapter;
+
     /**
      * Use this factory method to create a new instance of
      * this fragment using the provided parameters.
@@ -79,6 +87,7 @@ public class HomeFragment extends Fragment {
         mViewPager= view.findViewById(R.id.view_page);
         mCircleIndicator= view.findViewById(R.id.circle_indicator);
         mListPhoto = getListPhoto();
+        rcv = view.findViewById(R.id.list_motor);
 
         PhotoViewPagerAdapter adapter = new PhotoViewPagerAdapter(mListPhoto);
         mViewPager.setAdapter(adapter);

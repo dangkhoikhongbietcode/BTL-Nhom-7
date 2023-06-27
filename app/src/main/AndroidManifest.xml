@@ -30,11 +30,13 @@
             android:name=".Home"
             android:exported="false" />
         <activity
-            android:name=".Motor.MotorActivity"
+            android:name=".fragment.MotorDetailActivity"
             android:exported="false" />
+
         <activity
-            android:name=".Motor.MotorDetailActivity"
+            android:name=".fragment.MotorActivity"
             android:exported="false" />
+
         <activity
             android:name=".MainActivity"
             android:exported="true">
