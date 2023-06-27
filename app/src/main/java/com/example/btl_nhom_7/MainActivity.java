@@ -30,7 +30,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         loginBtn = findViewById(R.id.btnSubmit);
         tvForgotPW = findViewById(R.id.tvForgotPW);
-        editPassword = findViewById(R.id.editNewPassword);
+        editPassword = findViewById(R.id.editPassword);
         editPhoneNumber = findViewById(R.id.editOldPassword);
         editPassword.setTransformationMethod(PasswordTransformationMethod.getInstance());
         userDatabaseHelper = new UserDatabaseHelper(this);
