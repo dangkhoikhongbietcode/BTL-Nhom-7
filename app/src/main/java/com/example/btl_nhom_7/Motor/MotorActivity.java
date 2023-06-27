@@ -16,6 +16,7 @@ import android.widget.ListView;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.btl_nhom_7.R;
 
@@ -26,7 +27,7 @@ import java.util.List;
 
 public class MotorActivity extends AppCompatActivity {
 
-    private ListView listView;
+    private RecyclerView listView;
     private List<String> motorList;
     private ArrayAdapter<String> adapter;
     private MotorDatabaseHelper databaseHelper;
@@ -40,7 +41,7 @@ public class MotorActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_motor);
 
-        listView = findViewById(R.id.listView);
+//        listView = findViewById(R.id.recyclerView);
         motorList = new ArrayList<>();
         nameEditText = findViewById(R.id.nameEditText);
         priceEditText = findViewById(R.id.priceEditText);
@@ -49,22 +50,22 @@ public class MotorActivity extends AppCompatActivity {
         databaseHelper = new MotorDatabaseHelper(this);
 
         // Khởi tạo adapter
-        adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, motorList);
-        listView.setAdapter(adapter);
+//        adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, motorList);
+//        listView.setAdapter(adapter);
 
         loadMotorList(); // Load danh sách xe máy tu csdl
 
         // khi chon 1 muc trong xe may
-        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                String selectedItem = motorList.get(position);
-                // chuyen den trang chi tiet xe may
-                Intent intent = new Intent(MotorActivity.this, MotorDetailActivity.class);
-                intent.putExtra("selectedItem", selectedItem);
-                startActivity(intent);
-            }
-        });
+//        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+//            @Override
+//            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+//                String selectedItem = motorList.get(position);
+//                // chuyen den trang chi tiet xe may
+//                Intent intent = new Intent(MotorActivity.this, MotorDetailActivity.class);
+//                intent.putExtra("selectedItem", selectedItem);
+//                startActivity(intent);
+//            }
+//        });
 
         // Xu ly khi nut them duoc an
         addButton.setOnClickListener(new View.OnClickListener() {
@@ -77,16 +78,6 @@ public class MotorActivity extends AppCompatActivity {
                 priceEditText.setText("");
             }
         });
-        List<String> namesToDelete = new ArrayList<>();
-        namesToDelete.add("Honda");
-        namesToDelete.add("Yamaha");
-        namesToDelete.add("Suzuki");
-        namesToDelete.add("Kawasaki");
-        deleteMultipleMotors(namesToDelete);
-        addMotor("Honda", 1000);
-        addMotor("Yamaha", 1500);
-        addMotor("Suzuki", 1200);
-        addMotor("Kawasaki", 1800);
     }
 
     // Load danh sách xe máy từ cơ sở dữ liệu

@@ -14,9 +14,9 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.btl_nhom_7.Motor.MotorActivity;
 import com.example.btl_nhom_7.User.database.UserDatabaseHelper;
 import com.example.btl_nhom_7.User.model.User;
-import com.example.btl_nhom_7.fragment.MotorActivity;
 
 public class MainActivity extends AppCompatActivity {
     Button loginBtn,forgotPWBtn;
@@ -50,7 +50,7 @@ public class MainActivity extends AppCompatActivity {
                     editor.putInt("id", userDatabaseHelper.getUserIdByPhoneNumber(phoneNumber));
                     editor.putBoolean("isLoggedIn", true);
                     editor.apply();
-                    Intent intent = new Intent(MainActivity.this, MotorActivity.class);
+                    Intent intent = new Intent(MainActivity.this, Home.class);
                     startActivity(intent);
                 } else {
                     Toast.makeText(getApplicationContext(),"Sai tài khoản hoặc mật khẩu!",Toast.LENGTH_SHORT).show();

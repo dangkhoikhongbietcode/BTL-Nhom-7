@@ -1,5 +1,7 @@
 package com.example.btl_nhom_7.Motor;
 
+import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -9,14 +11,17 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.bumptech.glide.Glide;
 import com.example.btl_nhom_7.R;
+import com.example.btl_nhom_7.fragment.MotorDetailActivity;
+import com.google.gson.Gson;
 
 import java.util.List;
 
 public class MotorAdapter extends RecyclerView.Adapter<MotorAdapter.MotorViewHolder> {
-    private List<Integer> imageList = null;
-    private List<String> motorList;
+    private List<Motor> motorList;
     private OnItemClickListener listener;
+    private Context context;
 
     public interface OnItemClickListener {
         void onItemClick(int position);
@@ -26,9 +31,10 @@ public class MotorAdapter extends RecyclerView.Adapter<MotorAdapter.MotorViewHol
         this.listener = listener;
     }
 
-    public MotorAdapter(List<String> motorList) {
+    public MotorAdapter( Context context , List<Motor> motorList) {
+        this.context = context;
         this.motorList = motorList;
-        this.imageList = imageList;
+
     }
 
 
@@ -42,10 +48,13 @@ public class MotorAdapter extends RecyclerView.Adapter<MotorAdapter.MotorViewHol
 
     @Override
     public void onBindViewHolder(@NonNull MotorViewHolder holder, int position) {
-        String motorName = motorList.get(position);
-        int motorImage = imageList.get(position);
-        holder.nameTextView.setText(motorName);
-        holder.imageView.setImageResource(motorImage);
+        Motor motor= motorList.get(position);
+
+        holder.tvName.setText(motor.getName());
+        holder.tvPrice.setText(motor.getPrice() + "");
+        holder.image.setImageResource(R.drawable.xemay1);
+//        Glide.with(context).load(motor.getImage()).into(holder.image);
+//        holder.imageView.setImageResource(motorImage);
     }
 
 
@@ -55,28 +64,31 @@ public class MotorAdapter extends RecyclerView.Adapter<MotorAdapter.MotorViewHol
     }
 
     public class MotorViewHolder extends RecyclerView.ViewHolder {
-        public ImageView imageView;
-        private TextView nameTextView;
+        public ImageView image;
+        private TextView tvName;
+        private TextView tvPrice;
+
+        private void gotoDetail () {
+            Intent intent = new Intent(context, MotorDetailActivity.class);
+            Motor motor = motorList.get(getLayoutPosition());
+            Gson gson = new Gson();
+            intent.putExtra("Motor", gson.toJson(motor));
+            context.startActivity(intent);
+        }
 
         public MotorViewHolder(@NonNull View itemView) {
             super(itemView);
-            nameTextView = itemView.findViewById(R.id.nameTextView);
+            tvName = itemView.findViewById(R.id.tv_motor_name);
+            tvPrice = itemView.findViewById(R.id.tv_motor_price);
+            image = itemView.findViewById(R.id.imv_motor_image);
 
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    if (listener != null) {
-                        int position = getAdapterPosition();
-                        if (position != RecyclerView.NO_POSITION) {
-                            listener.onItemClick(position);
-                        }
-                    }
+                    gotoDetail();
                 }
             });
         }
 
-        public void bind(String motor) {
-            nameTextView.setText(motor);
-        }
     }
 }

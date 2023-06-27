@@ -11,7 +11,7 @@ import com.example.btl_nhom_7.User.model.User;
 
 public class UserDatabaseHelper extends SQLiteOpenHelper {
     private static final String DATABASE_NAME = "motor.db";
-    private static final int DATABASE_VERSION = 2;
+    private static final int DATABASE_VERSION = 3;
 
     public UserDatabaseHelper(Context context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);

@@ -28,13 +28,15 @@
             android:exported="false" />
         <activity
             android:name=".Home"
-            android:exported="false" />
+            android:exported="false" >
+            <!--            <intent-filter>-->
+            <!--                <action android:name="android.intent.action.MAIN" />-->
+
+            <!--&lt;!&ndash;                <category android:name="android.intent.category.LAUNCHER" />&ndash;&gt;-->
+            <!--            </intent-filter>-->
+        </activity>
         <activity
             android:name=".fragment.MotorDetailActivity"
-            android:exported="false" />
-
-        <activity
-            android:name=".fragment.MotorActivity"
             android:exported="false" />
 
         <activity

@@ -6,7 +6,7 @@ public class Motor implements Serializable {
     private String name;
     private int price;
 
-    public Motor(String name, int price) {
+    public Motor(String name, int price, String s) {
         this.name = name;
         this.price = price;
     }
