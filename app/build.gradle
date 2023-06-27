@@ -33,7 +33,9 @@ android {
 
 
 dependencies {
-
+    implementation files('libs/mail.jar')
+    implementation files('libs/additionnal.jar')
+    implementation files('libs/activation.jar')
     implementation 'androidx.appcompat:appcompat:1.6.1'
     implementation 'com.google.android.material:material:1.5.0'
     implementation 'com.google.android.material:material:1.2.0'

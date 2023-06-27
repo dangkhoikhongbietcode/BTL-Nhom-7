@@ -79,4 +79,15 @@ public class UserDatabaseHelper extends SQLiteOpenHelper {
 
         db.close();
     }
+    public void updatePassword(String phoneNumber, String newPassword) {
+        SQLiteDatabase db = this.getWritableDatabase();
+
+        ContentValues values = new ContentValues();
+        values.put("password", newPassword);
+
+        // Cập nhật mật khẩu mới dựa vào id
+        db.update("user", values, "phoneNumber = ?", new String[]{String.valueOf(phoneNumber)});
+
+        db.close();
+    }
 }
