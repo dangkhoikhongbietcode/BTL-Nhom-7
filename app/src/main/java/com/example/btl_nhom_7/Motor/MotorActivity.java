@@ -18,6 +18,7 @@ import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.btl_nhom_7.R;
+import com.example.btl_nhom_7.fragment.MotorDetailActivity;
 
 import java.util.ArrayList;
 import java.util.Collections;
