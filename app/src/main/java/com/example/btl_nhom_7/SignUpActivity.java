@@ -2,11 +2,7 @@ package com.example.btl_nhom_7;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.annotation.SuppressLint;
-import android.content.ContentValues;
 import android.content.Context;
-import android.database.Cursor;
-import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
@@ -32,7 +28,7 @@ public class SignUpActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sign_up);
         signUpBtn = (Button) findViewById(R.id.signUpBtn);
-        editPhoneNumberSignUp = (EditText)findViewById(R.id.editPhoneNumberSignUp);
+        editPhoneNumberSignUp = (EditText)findViewById(R.id.editPhoneNumberForgotPw);
         editPasswordSignUp = (EditText)findViewById(R.id.editPasswordSignUp);
         editPasswordSignUp.setTransformationMethod(PasswordTransformationMethod.getInstance());
         imageX8Char = (ImageView)findViewById(R.id.imageX8Char);

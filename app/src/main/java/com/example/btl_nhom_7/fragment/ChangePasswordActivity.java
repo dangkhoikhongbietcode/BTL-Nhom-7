@@ -29,7 +29,7 @@ public class ChangePasswordActivity extends AppCompatActivity {
         tvGetIdOnLogo = findViewById(R.id.tvGetIdOnLogo);
         btnSubmit = findViewById(R.id.btnSubmit);
         editOldPassword = findViewById(R.id.editOldPassword);
-        editNewPassword = findViewById(R.id.editNewPassword);
+        editNewPassword = findViewById(R.id.editPassword);
         editPasswordRepeat = findViewById(R.id.editPasswordRepeat);
         userDatabaseHelper = new UserDatabaseHelper(this);
         SharedPreferences sharedPreferences = getSharedPreferences("MyPrefs", Context.MODE_PRIVATE);
