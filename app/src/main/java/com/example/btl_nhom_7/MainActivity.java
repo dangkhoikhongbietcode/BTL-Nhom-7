@@ -34,6 +34,7 @@ public class MainActivity extends AppCompatActivity {
         editPhoneNumber = findViewById(R.id.editOldPassword);
         editPassword.setTransformationMethod(PasswordTransformationMethod.getInstance());
         userDatabaseHelper = new UserDatabaseHelper(this);
+
         loginBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
