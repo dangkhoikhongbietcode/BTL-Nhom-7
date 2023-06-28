@@ -12,13 +12,13 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import com.example.btl_nhom_7.User.database.UserDatabaseHelper;
 import com.example.btl_nhom_7.User.model.User;
+import com.example.btl_nhom_7.database.DatabaseHelper;
 
 public class ResetPasswordActivity extends AppCompatActivity {
     EditText editPassword, editPasswordRepeat;
     Button btnSubmit;
-    UserDatabaseHelper userDatabaseHelper;
+    DatabaseHelper userDatabaseHelper;
     @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,7 +27,7 @@ public class ResetPasswordActivity extends AppCompatActivity {
         editPassword = findViewById(R.id.editPassword);
         editPasswordRepeat = findViewById(R.id.editPasswordRepeat);
         btnSubmit = findViewById(R.id.btnSubmit);
-        userDatabaseHelper = new UserDatabaseHelper(this);
+        userDatabaseHelper = new DatabaseHelper(this);
         SharedPreferences sharedPreferences =getSharedPreferences("MyPrefs2", Context.MODE_PRIVATE);
         boolean isLoggedIn = sharedPreferences.getBoolean("isLoggedIn", false);
         btnSubmit.setOnClickListener(new View.OnClickListener() {

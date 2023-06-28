@@ -9,14 +9,14 @@ import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.btl_nhom_7.Motor.Motor;
-import com.example.btl_nhom_7.Motor.MotorDatabaseHelper;
+import com.example.btl_nhom_7.database.DatabaseHelper;
 import com.example.btl_nhom_7.R;
 import com.google.gson.Gson;
 
 public class MotorDetailActivity extends AppCompatActivity {
 
     private TextView textView;
-    private MotorDatabaseHelper databaseHelper;
+    private DatabaseHelper databaseHelper;
     Motor motor;
 
     @Override
@@ -29,7 +29,7 @@ public class MotorDetailActivity extends AppCompatActivity {
         motor = gson.fromJson(motorstr, Motor.class);
 
         textView = findViewById(R.id.textView);
-        databaseHelper = new MotorDatabaseHelper(this);
+        databaseHelper = new DatabaseHelper(this);
 
         // Nhận dữ liệu được chuyển từ MotorActivity
         String selectedItem = getIntent().getStringExtra("selectedItem");

@@ -8,25 +8,24 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
-import android.database.sqlite.SQLiteOpenHelper;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import com.example.btl_nhom_7.User.database.UserDatabaseHelper;
+import com.example.btl_nhom_7.database.DatabaseHelper;
 
 import javax.mail.*;
 import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeMessage;
-import java.util.Properties;
+
 import java.util.Random;
 
 public class ForgotPasswordActivity extends AppCompatActivity {
     EditText editPhoneNumberForgotPw, editEmailForgotPw,editVerificationCode;
     Button btnGetVerificationCode,btnForgotPwSubmit;
-    UserDatabaseHelper userDatabaseHelper;
+    DatabaseHelper userDatabaseHelper;
     Context context;
     int randomCode, randomCodeValue;
     @SuppressLint("MissingInflatedId")
@@ -39,7 +38,7 @@ public class ForgotPasswordActivity extends AppCompatActivity {
         editVerificationCode = findViewById(R.id.editVerificationCode);
         btnGetVerificationCode = findViewById(R.id.btnGetVerificationCode);
         btnForgotPwSubmit = findViewById(R.id.btnForgotPwSubmit);
-        userDatabaseHelper = new UserDatabaseHelper(this);
+        userDatabaseHelper = new DatabaseHelper(this);
         btnGetVerificationCode.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

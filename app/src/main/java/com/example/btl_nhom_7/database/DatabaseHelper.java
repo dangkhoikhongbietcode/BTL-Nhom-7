@@ -1,36 +1,95 @@
-package com.example.btl_nhom_7.User.database;
+package com.example.btl_nhom_7.database;
 
-import android.annotation.SuppressLint;
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
+import com.example.btl_nhom_7.Motor.Motor;
 import com.example.btl_nhom_7.User.model.User;
 
-public class UserDatabaseHelper extends SQLiteOpenHelper {
-    private static final String DATABASE_NAME = "motor.db";
-    private static final int DATABASE_VERSION = 3;
+import java.util.ArrayList;
+import java.util.List;
 
-    public UserDatabaseHelper(Context context) {
+public class DatabaseHelper extends SQLiteOpenHelper {
+
+    private static final String DATABASE_NAME = "motor.db";
+    private static final int DATABASE_VERSION = 2;
+
+    private static final String TABLE_MOTOR_NAME = "motor";
+    private static final String TBL_MOTOR_KEY_ID = "id";
+    private static final String TBL_MOTOR_KEY_NAME = "name";
+
+    private static final String TBL_MOTOR_KEY_PRICE = "price";
+    private static final String TBL_MOTOR_KEY_DETAILS = "details";
+    private static final String TBL_MOTOR_KEY_DETAILSHEAD = "details_head";
+    private static final String TBL_MOTOR_KEY_DETAILWEIGHT = "details_weight";
+    private static final String TBL_MOTOR_KEY_DETAILWEIGHT = "details_weight";
+
+    public DatabaseHelper(Context context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
     }
 
     @Override
     public void onCreate(SQLiteDatabase db) {
-        // Tạo bảng
-        String createTableQuery = "CREATE TABLE IF NOT EXISTS user (id INTEGER PRIMARY KEY AUTOINCREMENT," +
+        String createTableMotor = String.format("CREATE TABLE %s (%s INTEGER PRIMARY KEY AUTOINCREMENT, %s TEXT, %s INTEGER, %s TEXT)",TABLE_MOTOR_NAME, TBL_MOTOR_KEY_ID, TBL_MOTOR_KEY_NAME, TBL_MOTOR_KEY_PRICE, TBL_MOTOR_KEY_DETAILS);
+        String createTableUser = "CREATE TABLE IF NOT EXISTS user (id INTEGER PRIMARY KEY AUTOINCREMENT," +
                 "phoneNumber TEXT , password TEXT)";
-        db.execSQL(createTableQuery);
+        db.execSQL(createTableMotor);
+        db.execSQL(createTableUser);
     }
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
-        String dropTableQuery = "DROP TABLE IF EXISTS user";
-        db.execSQL(dropTableQuery);
+        String dropTableMotor = String.format("DROP TABLE IF EXISTS %s" , TABLE_MOTOR_NAME) ;
+        String dropTableUser = "DROP TABLE IF EXISTS user";
+        db.execSQL(dropTableMotor);
+        db.execSQL(dropTableUser);
         onCreate(db);
     }
+
+
+    public List<Motor> getAllMotor() {
+        List<Motor> listMotor = new ArrayList<>();
+        String query = "SELECT * FROM " + TABLE_MOTOR_NAME;
+
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor cursor = db.rawQuery(query, null);
+        cursor.moveToFirst();
+
+        while (cursor.isAfterLast() == false) {
+            int id = cursor.getInt(0) ;
+            String name = cursor.getString(1);
+            int price = cursor.getInt(2);
+            int details = cursor.getInt(3);
+
+            listMotor.add(new Motor(name, price, ""));
+            cursor.moveToNext();
+        }
+
+        return listMotor;
+    }
+
+    public void createMotor(Motor item) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues values = new ContentValues();
+        values.put(TBL_MOTOR_KEY_NAME, item.getName());
+        values.put(TBL_MOTOR_KEY_PRICE, item.getPrice());
+        values.put(TBL_MOTOR_KEY_DETAILS, item.getDetails());
+        db.insert(TABLE_MOTOR_NAME, null, values);
+        db.close();
+    }
+
+
+    public void clearMotorTable() {
+        SQLiteDatabase db = this.getWritableDatabase();
+        db.delete(TABLE_MOTOR_NAME, null, null);
+    }
+
+
+    /// user
+
     public void addUser(User user){
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues values = new ContentValues();
@@ -90,4 +149,5 @@ public class UserDatabaseHelper extends SQLiteOpenHelper {
 
         db.close();
     }
+
 }

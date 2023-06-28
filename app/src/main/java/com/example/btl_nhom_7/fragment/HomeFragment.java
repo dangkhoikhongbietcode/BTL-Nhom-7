@@ -12,7 +12,7 @@ import androidx.viewpager.widget.ViewPager;
 
 import com.example.btl_nhom_7.Motor.Motor;
 import com.example.btl_nhom_7.Motor.MotorAdapter;
-import com.example.btl_nhom_7.Motor.MotorDatabaseHelper;
+import com.example.btl_nhom_7.database.DatabaseHelper;
 import com.example.btl_nhom_7.Photo.adapter.PhotoViewPagerAdapter;
 import com.example.btl_nhom_7.Photo.model.Photo;
 import com.example.btl_nhom_7.R;
@@ -49,7 +49,7 @@ public class HomeFragment extends Fragment {
     private MotorAdapter motorAdapter;
 
     private List<Motor> motorList = new ArrayList<>();
-    private MotorDatabaseHelper databaseHelper;
+    private DatabaseHelper databaseHelper;
 
     /**
      * Use this factory method to create a new instance of
@@ -81,20 +81,10 @@ public class HomeFragment extends Fragment {
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
 
-        databaseHelper = new MotorDatabaseHelper(getContext());
+        databaseHelper = new DatabaseHelper(getContext());
 
-//        List<String> namesToDelete = new ArrayList<>();
-//        namesToDelete.add("Honda");
-//        namesToDelete.add("Yamaha");
-//        namesToDelete.add("Suzuki");
-//        namesToDelete.add("Kawasaki");
-//        deleteMultipleMotors(namesToDelete);
-//        addMotor("Honda", 1000);
-//        addMotor("Yamaha", 1500);
-//        addMotor("Suzuki", 1200);
-//        addMotor("Kawasaki", 1800);
 
-        databaseHelper.createMotor(new Motor ("Honda" , 1000 ,  "https://cdn.honda.com.vn/motorbike-versions/April2023/2pSqu65qdei9HLkHfOtJ.png"));
+//        databaseHelper.createMotor(new Motor ("Honda" , 1000 ,  "https://cdn.honda.com.vn/motorbike-versions/April2023/2pSqu65qdei9HLkHfOtJ.png"));
 
 
         motorList = databaseHelper.getAllMotor();
@@ -125,7 +115,7 @@ public class HomeFragment extends Fragment {
         // RCV Adapter
 
         motorAdapter = new MotorAdapter(getContext(),motorList);
-        GridLayoutManager layoutManager = new GridLayoutManager(getContext(), 1, GridLayoutManager.VERTICAL, false );
+        GridLayoutManager layoutManager = new GridLayoutManager(getContext(), 2, GridLayoutManager.VERTICAL, false );
         rcv.setLayoutManager(layoutManager);
         rcv.setAdapter(motorAdapter);
 

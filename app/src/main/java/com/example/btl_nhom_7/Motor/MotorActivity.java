@@ -2,23 +2,21 @@ package com.example.btl_nhom_7.Motor;
 
 import android.annotation.SuppressLint;
 import android.content.ContentValues;
-import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
-import android.widget.ListView;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.btl_nhom_7.R;
-import com.example.btl_nhom_7.fragment.MotorDetailActivity;
+import com.example.btl_nhom_7.database.DatabaseHelper;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -27,10 +25,10 @@ import java.util.List;
 
 public class MotorActivity extends AppCompatActivity {
 
-    private ListView listView;
+    private RecyclerView listView;
     private List<String> motorList;
     private ArrayAdapter<String> adapter;
-    private MotorDatabaseHelper databaseHelper;
+    private DatabaseHelper databaseHelper;
     private EditText nameEditText;
     private EditText priceEditText;
     private Button addButton;
@@ -41,31 +39,31 @@ public class MotorActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_motor);
 
-        listView = findViewById(R.id.listView);
+//        listView = findViewById(R.id.recyclerView);
         motorList = new ArrayList<>();
         nameEditText = findViewById(R.id.nameEditText);
         priceEditText = findViewById(R.id.priceEditText);
         addButton = findViewById(R.id.addButton);
 
-        databaseHelper = new MotorDatabaseHelper(this);
+        databaseHelper = new DatabaseHelper(this);
 
         // Khởi tạo adapter
-        adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, motorList);
-        listView.setAdapter(adapter);
+//        adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, motorList);
+//        listView.setAdapter(adapter);
 
         loadMotorList(); // Load danh sách xe máy tu csdl
 
         // khi chon 1 muc trong xe may
-        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                String selectedItem = motorList.get(position);
-                // chuyen den trang chi tiet xe may
-                Intent intent = new Intent(MotorActivity.this, MotorDetailActivity.class);
-                intent.putExtra("selectedItem", selectedItem);
-                startActivity(intent);
-            }
-        });
+//        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+//            @Override
+//            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+//                String selectedItem = motorList.get(position);
+//                // chuyen den trang chi tiet xe may
+//                Intent intent = new Intent(MotorActivity.this, MotorDetailActivity.class);
+//                intent.putExtra("selectedItem", selectedItem);
+//                startActivity(intent);
+//            }
+//        });
 
         // Xu ly khi nut them duoc an
         addButton.setOnClickListener(new View.OnClickListener() {
@@ -78,16 +76,7 @@ public class MotorActivity extends AppCompatActivity {
                 priceEditText.setText("");
             }
         });
-        List<String> namesToDelete = new ArrayList<>();
-//        namesToDelete.add("Honda");
-//        namesToDelete.add("Yamaha");
-//        namesToDelete.add("Suzuki");
-//        namesToDelete.add("Kawasaki");
-//        deleteMultipleMotors(namesToDelete);
-        addMotor("Honda", 1000);
-        addMotor("Yamaha", 1500);
-        addMotor("Suzuki", 1200);
-        addMotor("Kawasaki", 1800);
+
     }
 
     // Load danh sách xe máy từ cơ sở dữ liệu

@@ -17,7 +17,6 @@ import android.widget.Toast;
 
 import com.example.btl_nhom_7.MainActivity;
 import com.example.btl_nhom_7.R;
-import com.example.btl_nhom_7.User.database.UserDatabaseHelper;
 
 /**
  * A simple {@link Fragment} subclass.

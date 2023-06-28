@@ -14,16 +14,15 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.btl_nhom_7.Motor.MotorActivity;
-import com.example.btl_nhom_7.User.database.UserDatabaseHelper;
 import com.example.btl_nhom_7.User.model.User;
+import com.example.btl_nhom_7.database.DatabaseHelper;
 
 public class MainActivity extends AppCompatActivity {
     Button loginBtn,forgotPWBtn;
     TextView tvForgotPW;
     EditText editPhoneNumber,editPassword;
     Context context;
-    UserDatabaseHelper userDatabaseHelper;
+    DatabaseHelper userDatabaseHelper;
     @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,7 +33,7 @@ public class MainActivity extends AppCompatActivity {
         editPassword = findViewById(R.id.editPassword);
         editPhoneNumber = findViewById(R.id.editOldPassword);
         editPassword.setTransformationMethod(PasswordTransformationMethod.getInstance());
-        userDatabaseHelper = new UserDatabaseHelper(this);
+        userDatabaseHelper = new DatabaseHelper(this);
         loginBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
