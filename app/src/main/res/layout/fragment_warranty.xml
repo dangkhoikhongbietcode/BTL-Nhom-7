@@ -33,19 +33,7 @@
                     android:layout_height="wrap_content"
                     android:inputType="text"/>
             </com.google.android.material.textfield.TextInputLayout>
-            <com.google.android.material.textfield.TextInputLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="@string/phone_number_Warranty"
-                android:layout_margin="6dp"
-                app:startIconDrawable="@drawable/baseline_local_phone_24"
-                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
-                <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/editPhoneNumberWarranty"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:inputType="number"/>
-            </com.google.android.material.textfield.TextInputLayout>
+
             <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -101,6 +89,7 @@
 
 
             <Button
+                android:id="@+id/btnSubmitWarranty"
                 android:layout_width="305dp"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="54dp"

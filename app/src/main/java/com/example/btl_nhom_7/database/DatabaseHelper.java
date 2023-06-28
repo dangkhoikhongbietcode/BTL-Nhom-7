@@ -35,6 +35,16 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         String createTableMotor = String.format("CREATE TABLE %s (%s INTEGER PRIMARY KEY AUTOINCREMENT, %s TEXT, %s INTEGER, %s TEXT)",TABLE_MOTOR_NAME, TBL_MOTOR_KEY_ID, TBL_MOTOR_KEY_NAME, TBL_MOTOR_KEY_PRICE, TBL_MOTOR_KEY_DETAILS);
         String createTableUser = "CREATE TABLE IF NOT EXISTS user (id INTEGER PRIMARY KEY AUTOINCREMENT," +
                 "phoneNumber TEXT , password TEXT)";
+        String createFormWarrantyTableQuery = "CREATE TABLE IF NOT EXISTS FormWarranty (" +
+                "NameWarranty TEXT," +
+                "PhoneNumWarranty TEXT," +
+                "WarrantyDate TEXT," +
+                "Option TEXT," +
+                "WarrantyMotor TEXT," +
+                "WarrantyStore TEXT," +
+                "id INTEGER," +
+                "FOREIGN KEY (id) REFERENCES user (id))";
+        db.execSQL(createFormWarrantyTableQuery);
         db.execSQL(createTableMotor);
         db.execSQL(createTableUser);
     }
@@ -43,6 +53,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
         String dropTableMotor = String.format("DROP TABLE IF EXISTS %s" , TABLE_MOTOR_NAME) ;
         String dropTableUser = "DROP TABLE IF EXISTS user";
+        db.execSQL("DROP TABLE IF EXISTS FormWarranty");
         db.execSQL(dropTableMotor);
         db.execSQL(dropTableUser);
         onCreate(db);
