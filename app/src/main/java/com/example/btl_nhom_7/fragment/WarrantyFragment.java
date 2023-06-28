@@ -2,13 +2,18 @@ package com.example.btl_nhom_7.fragment;
 
 import android.annotation.SuppressLint;
 import android.app.DatePickerDialog;
+import android.app.NotificationChannel;
+import android.app.NotificationManager;
+import android.app.PendingIntent;
 import android.content.ContentValues;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.database.sqlite.SQLiteDatabase;
+import android.os.Build;
 import android.os.Bundle;
 
+import androidx.core.app.NotificationCompat;
 import androidx.fragment.app.Fragment;
 
 import android.util.Log;
@@ -31,7 +36,10 @@ import com.example.btl_nhom_7.database.DatabaseHelper;
 import com.example.btl_nhom_7.Warranty.DisplayActivity;
 import com.google.android.material.textfield.TextInputEditText;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.Calendar;
+import java.util.Locale;
 
 public class WarrantyFragment extends Fragment {
     public DatabaseHelper dbHelper;
@@ -133,13 +141,24 @@ public class WarrantyFragment extends Fragment {
 
         return view;
     }
+    private void checkWarrantyDate(int year, int month, int day) {
+        Calendar currentCalendar = Calendar.getInstance(); // Lấy thời gian hiện tại
 
+        // Tạo calendar từ thời gian đăng kí bảo hành
+        Calendar warrantyCalendar = Calendar.getInstance();
+        warrantyCalendar.set(year, month, day);
+
+        if (warrantyCalendar.equals(currentCalendar)) {
+            showNotification(); // Hiển thị thông báo nếu ngày trùng khớp
+        }
+    }
     private void saveRegistrationForm() {
         String nameWarranty = edtNameWarranty.getText().toString();
         String dateWarranty = edtDay.getText().toString();
         String service = autoCompleteOption.getText().toString();
         String selectMotor = autoCompleteMotor.getText().toString();
         String selectStore = autoCompleteStore.getText().toString();
+
         SQLiteDatabase db = dbHelper.getWritableDatabase();
         ContentValues values = new ContentValues();
         values.put("NameWarranty", nameWarranty);
@@ -155,8 +174,56 @@ public class WarrantyFragment extends Fragment {
         editor.putString("Option", service);
         editor.putString("WarrantyMotor", selectMotor);
         editor.putString("WarrantyStore", selectStore);
-        editor.apply();
 
+        Calendar currentCalendar = Calendar.getInstance();
+        int currentYear = currentCalendar.get(Calendar.YEAR);
+        int currentMonth = currentCalendar.get(Calendar.MONTH);
+        int currentDay = currentCalendar.get(Calendar.DAY_OF_MONTH);
+
+        try {
+            Calendar warrantyCalendar = Calendar.getInstance();
+            warrantyCalendar.setTime(new SimpleDateFormat("dd/MM/yyyy", Locale.getDefault()).parse(dateWarranty));
+            int warrantyYear = warrantyCalendar.get(Calendar.YEAR);
+            int warrantyMonth = warrantyCalendar.get(Calendar.MONTH);
+            int warrantyDay = warrantyCalendar.get(Calendar.DAY_OF_MONTH);
+
+            if (warrantyYear == currentYear && warrantyMonth == currentMonth && warrantyDay == currentDay) {
+                showNotification(); // Hiển thị thông báo nếu ngày trùng khớp
+            }
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+
+        editor.apply();
+    }
+
+
+
+
+    private void showNotification() {
+        // Tạo kênh thông báo (chỉ cần thực hiện trên Android 8.0+)
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            NotificationChannel channel = new NotificationChannel("warranty_channel", "Warranty Channel", NotificationManager.IMPORTANCE_DEFAULT);
+            NotificationManager notificationManager = requireContext().getSystemService(NotificationManager.class);
+            notificationManager.createNotificationChannel(channel);
+        }
+
+        // Intent khi nhấn vào thông báo
+        Intent intent = new Intent(requireContext(), Home.class);
+        PendingIntent pendingIntent = PendingIntent.getActivity(requireContext(), 0, intent, PendingIntent.FLAG_UPDATE_CURRENT);
+
+        // Xây dựng thông báo
+        NotificationCompat.Builder builder = new NotificationCompat.Builder(requireContext(), "warranty_channel")
+                .setSmallIcon(R.drawable.ic_notification)
+                .setContentTitle("Thông báo bảo hành")
+                .setContentText("Ngày đăng kí bảo hành đã đến. Đến cửa hàng của chúng tôi thôi nào. Géc Gô!!!!!")
+                .setPriority(NotificationCompat.PRIORITY_DEFAULT)
+                .setContentIntent(pendingIntent)
+                .setAutoCancel(true);
+
+        // Hiển thị thông báo
+        NotificationManager notificationManager = requireContext().getSystemService(NotificationManager.class);
+        notificationManager.notify(1, builder.build());
     }
 
     @Override
