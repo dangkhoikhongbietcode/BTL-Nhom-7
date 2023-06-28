@@ -13,8 +13,8 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Toast;
 
-import com.example.btl_nhom_7.User.database.UserDatabaseHelper;
 import com.example.btl_nhom_7.User.model.User;
+import com.example.btl_nhom_7.database.DatabaseHelper;
 
 public class SignUpActivity extends AppCompatActivity {
     Button signUpBtn;
@@ -22,7 +22,7 @@ public class SignUpActivity extends AppCompatActivity {
             imageTick8Char,imageTickCapsChar,imageTickNumberChar;
     EditText editPhoneNumberSignUp,editPasswordSignUp;
     Context context;
-    UserDatabaseHelper userDatabaseHelper;
+    DatabaseHelper userDatabaseHelper;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -37,7 +37,7 @@ public class SignUpActivity extends AppCompatActivity {
         imageTick8Char = (ImageView)findViewById(R.id.imageTick8Char);
         imageTickCapsChar = (ImageView)findViewById(R.id.imageTickCapsChar);
         imageTickNumberChar = (ImageView)findViewById(R.id.imageTickNumberChar);
-        userDatabaseHelper = new UserDatabaseHelper(this);
+        userDatabaseHelper = new DatabaseHelper(this);
         editPasswordSignUp.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {}

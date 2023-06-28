@@ -1,13 +1,18 @@
 package com.example.btl_nhom_7.fragment;
 
 import android.os.Bundle;
-import androidx.fragment.app.Fragment;
-import androidx.viewpager.widget.ViewPager;
-
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.GridLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+import androidx.viewpager.widget.ViewPager;
+
+import com.example.btl_nhom_7.Motor.Motor;
+import com.example.btl_nhom_7.Motor.MotorAdapter;
+import com.example.btl_nhom_7.database.DatabaseHelper;
 import com.example.btl_nhom_7.Photo.adapter.PhotoViewPagerAdapter;
 import com.example.btl_nhom_7.Photo.model.Photo;
 import com.example.btl_nhom_7.R;
@@ -22,7 +27,6 @@ import me.relex.circleindicator.CircleIndicator;
  * A simple {@link Fragment} subclass.
  * Use the {@link HomeFragment#newInstance} factory method to
  * create an instance of this fragment.
- *
  */
 public class HomeFragment extends Fragment {
 
@@ -36,8 +40,17 @@ public class HomeFragment extends Fragment {
     private String mParam2;
     private ViewPager mViewPager;
     private CircleIndicator mCircleIndicator;
-    private List<Photo> mListPhoto;
+    private List<Photo> mListPhoto = new ArrayList<>();
+
+    private RecyclerView rcv;
+
     ActivityHomeBinding binding;
+
+    private MotorAdapter motorAdapter;
+
+    private List<Motor> motorList = new ArrayList<>();
+    private DatabaseHelper databaseHelper;
+
     /**
      * Use this factory method to create a new instance of
      * this fragment using the provided parameters.
@@ -67,6 +80,20 @@ public class HomeFragment extends Fragment {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
+
+        databaseHelper = new DatabaseHelper(getContext());
+
+
+//        databaseHelper.createMotor(new Motor ("Honda" , 1000 ,  "https://cdn.honda.com.vn/motorbike-versions/April2023/2pSqu65qdei9HLkHfOtJ.png"));
+
+
+        motorList = databaseHelper.getAllMotor();
+
+//        motorList.add(new Motor ("Honda" , 1000 ,  "https://cdn.honda.com.vn/motorbike-versions/April2023/2pSqu65qdei9HLkHfOtJ.png")) ;
+//        motorList.add(new Motor ("Yamaha" , 1500 ,  "https://cdn.honda.com.vn/motorbike-versions/April2023/2pSqu65qdei9HLkHfOtJ.png")) ;
+//        motorList.add(new Motor ("Suzuki" , 1200 ,  "https://cdn.honda.com.vn/motorbike-versions/April2023/2pSqu65qdei9HLkHfOtJ.png")) ;
+//        motorList.add(new Motor ("Kawasaki" , 1800 ,  "https://cdn.honda.com.vn/motorbike-versions/April2023/2pSqu65qdei9HLkHfOtJ.png")) ;
+
     }
 
     @Override
@@ -76,15 +103,25 @@ public class HomeFragment extends Fragment {
         binding = ActivityHomeBinding.inflate(getLayoutInflater());
 //        setContentView(binding.getRoot());
         View view = inflater.inflate(R.layout.fragment_home, container, false);
-        mViewPager= view.findViewById(R.id.view_page);
-        mCircleIndicator= view.findViewById(R.id.circle_indicator);
+        mViewPager = view.findViewById(R.id.view_page);
+        mCircleIndicator = view.findViewById(R.id.circle_indicator);
+        rcv = view.findViewById(R.id.list_motor);
         mListPhoto = getListPhoto();
 
         PhotoViewPagerAdapter adapter = new PhotoViewPagerAdapter(mListPhoto);
         mViewPager.setAdapter(adapter);
         mCircleIndicator.setViewPager(mViewPager);
+
+        // RCV Adapter
+
+        motorAdapter = new MotorAdapter(getContext(),motorList);
+        GridLayoutManager layoutManager = new GridLayoutManager(getContext(), 2, GridLayoutManager.VERTICAL, false );
+        rcv.setLayoutManager(layoutManager);
+        rcv.setAdapter(motorAdapter);
+
         return view;
     }
+
     private List<Photo> getListPhoto() {
         List<Photo> list = new ArrayList<>();
         list.add(new Photo(R.drawable.bgimg_1));
@@ -94,4 +131,7 @@ public class HomeFragment extends Fragment {
 
         return list;
     }
+
+
+
 }

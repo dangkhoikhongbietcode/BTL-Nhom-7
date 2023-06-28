@@ -14,12 +14,12 @@ import android.widget.Toast;
 
 import com.example.btl_nhom_7.MainActivity;
 import com.example.btl_nhom_7.R;
-import com.example.btl_nhom_7.User.database.UserDatabaseHelper;
 import com.example.btl_nhom_7.User.model.User;
+import com.example.btl_nhom_7.database.DatabaseHelper;
 
 public class ChangePasswordActivity extends AppCompatActivity {
     TextView tvGetIdOnLogo;
-    UserDatabaseHelper userDatabaseHelper;
+    DatabaseHelper userDatabaseHelper;
     Button btnSubmit;
     EditText editOldPassword,editNewPassword,editPasswordRepeat;
     @Override
@@ -31,7 +31,7 @@ public class ChangePasswordActivity extends AppCompatActivity {
         editOldPassword = findViewById(R.id.editOldPassword);
         editNewPassword = findViewById(R.id.editPassword);
         editPasswordRepeat = findViewById(R.id.editPasswordRepeat);
-        userDatabaseHelper = new UserDatabaseHelper(this);
+        userDatabaseHelper = new DatabaseHelper(this);
         SharedPreferences sharedPreferences = getSharedPreferences("MyPrefs", Context.MODE_PRIVATE);
         boolean isLoggedIn = sharedPreferences.getBoolean("isLoggedIn", false);
         if (isLoggedIn) {

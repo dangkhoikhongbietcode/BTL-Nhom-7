@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <uses-permission
-        android:name="android.permission.INTERNET"
+        android:name="android.permission.WRITE_EXTERNAL_STORAGE"
         android:maxSdkVersion="32"
         tools:ignore="ScopedStorage" />
 
@@ -18,9 +18,6 @@
         android:theme="@style/Theme.BTLNhom7"
         tools:targetApi="31">
         <activity
-            android:name=".ResetPasswordActivity"
-            android:exported="false" />
-        <activity
             android:name=".fragment.ChangePasswordActivity"
             android:exported="false" />
         <activity
@@ -31,13 +28,17 @@
             android:exported="false" />
         <activity
             android:name=".Home"
-            android:exported="false" />
+            android:exported="true" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <!--                <category android:name="android.intent.category.LAUNCHER" />-->
+            </intent-filter>
+        </activity>
         <activity
-            android:name=".Motor.MotorActivity"
+            android:name=".fragment.MotorDetailActivity"
             android:exported="false" />
-        <activity
-            android:name=".Motor.MotorDetailActivity"
-            android:exported="false" />
+
         <activity
             android:name=".MainActivity"
             android:exported="true">

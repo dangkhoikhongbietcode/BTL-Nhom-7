@@ -1,46 +1,34 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="16dp"
-    tools:context=".Motor.MotorActivity">
+    android:orientation="vertical">
 
-    <ListView
-        android:id="@+id/listView"
+    <!-- RecyclerView -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerView"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:src="@drawable/default_image" />
+        android:layout_height="wrap_content" />
 
-
+    <!-- EditText -->
     <EditText
         android:id="@+id/nameEditText"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/listView"
-        android:hint="Tên"
-        android:layout_marginTop="16dp" />
+        android:hint="Name" />
 
+    <!-- EditText -->
     <EditText
         android:id="@+id/priceEditText"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/nameEditText"
-        android:hint="Giá"
-        android:inputType="number"
-        android:layout_marginTop="16dp" />
+        android:hint="Price" />
 
+    <!-- Button -->
     <Button
         android:id="@+id/addButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/priceEditText"
-        android:text="Thêm"
-        android:layout_marginTop="16dp" />
+        android:text="Add" />
 
-</RelativeLayout>
+</LinearLayout>
