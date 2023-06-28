@@ -25,7 +25,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     private static final String TBL_MOTOR_KEY_DETAILS = "details";
     private static final String TBL_MOTOR_KEY_DETAILSHEAD = "details_head";
     private static final String TBL_MOTOR_KEY_DETAILWEIGHT = "details_weight";
-    private static final String TBL_MOTOR_KEY_DETAILWEIGHT = "details_weight";
 
     public DatabaseHelper(Context context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);

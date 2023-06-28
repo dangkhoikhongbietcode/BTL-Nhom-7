@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <uses-permission
-        android:name="android.permission.WRITE_EXTERNAL_STORAGE"
+        android:name="android.permission.INTERNET"
         android:maxSdkVersion="32"
         tools:ignore="ScopedStorage" />
 
@@ -25,6 +25,9 @@
             android:exported="false" />
         <activity
             android:name=".ForgotPasswordActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ResetPasswordActivity"
             android:exported="false" />
         <activity
             android:name=".Home"
