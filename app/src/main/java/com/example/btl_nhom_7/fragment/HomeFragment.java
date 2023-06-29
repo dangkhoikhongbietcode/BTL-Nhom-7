@@ -83,9 +83,26 @@ public class HomeFragment extends Fragment {
 
         databaseHelper = new DatabaseHelper(getContext());
 
+//
+//        databaseHelper.createMotor(new Motor (0,"SH350i" , 15000000,  "https://cdn.honda.com.vn/motorbike-versions/December2022/gfUfURy1WBwtBbVFH4FO.png","Tại Việt Nam, hình ảnh mẫu xe SH từ lâu đã trở thành biểu tượng cho tính đẳng cấp, sang trọng và sự hoàn hảo. Kế thừa những nét đặc trưng đó, mẫu xe SH350i ra mắt năm 2021 đã gây ấn tượng mạnh mẽ với vẻ đẹp đậm chất hiện đại công nghệ và “bề thế”.","Thông số","Đặc điểm","Kích thước và cân nặng: 2.160 mm x 743 mm x 1.162 mm, 172 kg \nDung tích bình xăng: 11,2 Lít"));
+//        databaseHelper.createMotor(new Motor (1,"Rebel 500 2023" , 181000000,  "https://cdn.honda.com.vn/motorbikes/April2023/LgWuSbmoh08VKlrSdvFR.jpg","Tự do tạo dấu ấn của riêng mình Mẫu xe Rebel 500 với khối động cơ 2 xy lanh song song mạnh mẽ, đặt gọn trong bộ khung xe với trọng tâm thấp, phong cách thiết kế tối giản đã đưa chiếc xe trở nên hấp dẫn trong mắt người lái","Thông số","Đặc điểm","Kích thước và cân nặng: 2.206 x 822 x 1.093 mm, 190 kg \nDung tích bình xăng: 11,2 Lít"));
+//        databaseHelper.createMotor(new Motor (2,"Future 125 FI" , 31000000,  "https://cdn.honda.com.vn/motorbike-versions/October2021/mTuI6iTbdYCOkHBMnsNw.png","Honda Future 125 FI với thiết kế trẻ trung, lịch lãm và hiện đại được bổ sung màu mới, tạo những điểm nhấn ấn tượng, thu hút mọi ánh nhìn. Cùng với vị thế là mẫu xe số cao cấp hàng đầu phân khúc tại Việt Nam, Future 125 FI cho bạn tự tin thể hiện phong cách, phẩm chất của mình trên mọi hành trình.","Thông số","Đặc điểm","Kích thước và cân nặng: 1.931 mm x 711 mm x 1.083 mm, 104 kg \nDung tích bình xăng: 4,6 Lít"));
+//        databaseHelper.createMotor(new Motor (3,"LEAD 125cc" , 41000000,  "https://cdn.honda.com.vn/motorbikes/December2021/PxbOtPG619Vte84CQHPg.png","Kế thừa ngôn ngữ thiết kế hiện đại cùng nhiều tiện ích vượt trội vốn có, xe LEAD 125cc mới nay được nâng tầm với động cơ thế hệ mới nhất của Honda eSP+ như trên các mẫu xe ga cao cấp, màu sắc mới hợp xu hướng, cổng sạc tiện lợi, thiết kế phía trước tinh tế, tem xe nổi bật giúp nâng tầm phong cách và tối đa trải nghiệm lái xe cho người sở hữu.","Thông số","Đặc điểm","Kích thước và cân nặng: 1.844 mm x 680 mm x 1.130 mm, 113 kg \nDung tích bình xăng: 6 Lít"));
+//        databaseHelper.createMotor(new Motor (4,"Super Cub C125" , 87800000,  "https://cdn.honda.com.vn/motorbikes/October2021/qdGgJvma2sfdCVaSKhaQ.png","Thiết kế cổ điển, thanh lịch đậm chất Super CUB","Thông số","Đặc điểm","Kích thước và cân nặng: 1.910 x 718 x 1.002mm, 109 kg \nDung tích bình xăng: 3,7 Lít"));
+//        databaseHelper.createMotor(new Motor (5,"Air Blade 125/160" , 42790000,  "https://cdn.honda.com.vn/motorbikes/May2022/yXVDCgQDZJcYqcCZPzyQ.png","Xứng danh mẫu xe tay ga thể thao tầm trung hàng đầu trong suốt hơn một thập kỷ qua, AIR BLADE hoàn toàn mới nay được nâng cấp động cơ eSP+ 4 van độc quyền, tiên tiến nhất giúp mang trong mình mãnh lực tiên phong.","Thông số","Đặc điểm","Kích thước và cân nặng: 1.887 x 687 x 1.092 mm, 114 kg \nDung tích bình xăng: 4,4 Lít"));
+//        databaseHelper.createMotor(new Motor (6,"CB500F 2022" , 184900000,  "https://cdn.honda.com.vn/motorbike-versions/September2022/A12M6V57z2Hk5f2Ctmbq.jpg","Một dòng xe mang đến sự khác biệt, đánh dấu cá tính đặc trưng của bạn, và cho bạn khám phá những trải nghiệm lái mới: linh hoạt trên đường đô thị mã vẫn mượt mà trên mọi cung đường trường","Thông số","Đặc điểm","Kích thước và cân nặng: 2.080 mm x 800 mm x 1.060 mm, 189 kg \nDung tích bình xăng: 17,1 Lít"));
+//        databaseHelper.createMotor(new Motor (7,"Winner X" , 46160000,  "https://cdn.honda.com.vn/motorbike-versions/December2021/AjAslqMuYpko2d6wmuEs.png","WINNER X mới sẵn sàng cùng các tay lái bứt tốc trên mọi hành trình khám phá.","Thông số","Đặc điểm","Kích thước và cân nặng: 2.019 x 727 x 1.104 mm, 120 kg \nDung tích bình xăng: 4,5 Lít"));
+//        databaseHelper.createMotor(new Motor (8,"Wave Alpha 110cc" , 18100000,  "https://cdn.honda.com.vn/motorbike-versions/August2022/FGTa8tJ5LqpxS3s7OnZH.png","Wave Alpha phiên bản 2023 trẻ trung và năng động với màu đen mờ hoàn toàn mới cùng thiết kế bộ tem mới ấn tượng, thu hút ánh nhìn, cho bạn tự tin thể hiện cá tính của mình trên mọi hành trình","Thông số","Đặc điểm","Kích thước và cân nặng: 1.914 mm x 688 mm x 1.075 mm, 97 kg \nDung tích bình xăng: 11,2 Lít"));
+//        databaseHelper.createMotor(new Motor (1,"Rebel 500 2023" , 181000000,  "https://cdn.honda.com.vn/motorbikes/April2023/LgWuSbmoh08VKlrSdvFR.jpg","Tự do tạo dấu ấn của riêng mình Mẫu xe Rebel 500 với khối động cơ 2 xy lanh song song mạnh mẽ, đặt gọn trong bộ khung xe với trọng tâm thấp, phong cách thiết kế tối giản đã đưa chiếc xe trở nên hấp dẫn trong mắt người lái","Thông số","Đặc điểm","Kích thước và cân nặng: 2.206 x 822 x 1.093 mm, 190 kg \nDung tích bình xăng: 3,7 Lít"));
+//        databaseHelper.createMotor(new Motor (1,"Rebel 500 2023" , 181000000,  "https://cdn.honda.com.vn/motorbikes/April2023/LgWuSbmoh08VKlrSdvFR.jpg","Tự do tạo dấu ấn của riêng mình Mẫu xe Rebel 500 với khối động cơ 2 xy lanh song song mạnh mẽ, đặt gọn trong bộ khung xe với trọng tâm thấp, phong cách thiết kế tối giản đã đưa chiếc xe trở nên hấp dẫn trong mắt người lái","Thông số","Đặc điểm","Kích thước và cân nặng: 2.206 x 822 x 1.093 mm, 190 kg \nDung tích bình xăng: 11,2 Lít"));
+//        databaseHelper.createMotor(new Motor (1,"Rebel 500 2023" , 181000000,  "https://cdn.honda.com.vn/motorbikes/April2023/LgWuSbmoh08VKlrSdvFR.jpg","Tự do tạo dấu ấn của riêng mình Mẫu xe Rebel 500 với khối động cơ 2 xy lanh song song mạnh mẽ, đặt gọn trong bộ khung xe với trọng tâm thấp, phong cách thiết kế tối giản đã đưa chiếc xe trở nên hấp dẫn trong mắt người lái","Thông số","Đặc điểm","Kích thước và cân nặng: 2.206 x 822 x 1.093 mm, 190 kg \nDung tích bình xăng: 11,2 Lít"));
+//
 
-//        databaseHelper.createMotor(new Motor ("Honda" , 1000 ,  "https://cdn.honda.com.vn/motorbike-versions/April2023/2pSqu65qdei9HLkHfOtJ.png"));
+//        databaseHelper.createMotor(new Motor ("Yamaha" , 15000 ,  "https://cdn.honda.com.vn/motorbike-versions/April2023/2pSqu65qdei9HLkHfOtJ.png"));
+//        databaseHelper.createMotor(new Motor ("Suzuki" , 1600 ,  "https://cdn.honda.com.vn/motorbike-versions/April2023/2pSqu65qdei9HLkHfOtJ.png"));
+//        databaseHelper.createMotor(new Motor ("Kawasaki" , 17000 ,  "https://cdn.honda.com.vn/motorbike-versions/April2023/2pSqu65qdei9HLkHfOtJ.png"));
 
+      //databaseHelper.clearMotorTable();
 
         motorList = databaseHelper.getAllMotor();
 
@@ -101,7 +118,6 @@ public class HomeFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         binding = ActivityHomeBinding.inflate(getLayoutInflater());
-//        setContentView(binding.getRoot());
         View view = inflater.inflate(R.layout.fragment_home, container, false);
         mViewPager = view.findViewById(R.id.view_page);
         mCircleIndicator = view.findViewById(R.id.circle_indicator);
