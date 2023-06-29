@@ -1,57 +1,86 @@
 package com.example.btl_nhom_7.fragment;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
-import android.database.Cursor;
-import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
+import android.util.Log;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.bumptech.glide.Glide;
 import com.example.btl_nhom_7.Motor.Motor;
-import com.example.btl_nhom_7.database.DatabaseHelper;
 import com.example.btl_nhom_7.R;
+import com.example.btl_nhom_7.database.DatabaseHelper;
 import com.google.gson.Gson;
+
+import java.util.ArrayList;
 
 public class MotorDetailActivity extends AppCompatActivity {
 
-    private TextView textView;
-    private DatabaseHelper databaseHelper;
-    Motor motor;
+    private ImageView imageView;
+    private TextView nameTextView;
+    private TextView priceTextView;
+    private TextView detailsTextView;
 
+    private DatabaseHelper databaseHelper;
+     private Motor motor;
+
+    @SuppressLint("SuspiciousIndentation")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_motor_detail);
+
+        // Initialize views
+        imageView = findViewById(R.id.iv_motor_image);
+        nameTextView = findViewById(R.id.tv_motor_details_head);
+        priceTextView = findViewById(R.id.tv_motor_details);
+        detailsTextView = findViewById(R.id.tv_motor_details_weight);
+
+        // Get the motor json from the intent
         Intent intent = getIntent();
         String motorstr = intent.getStringExtra("Motor");
         Gson gson = new Gson();
         motor = gson.fromJson(motorstr, Motor.class);
 
-        textView = findViewById(R.id.textView);
+        // Create an instance of the DatabaseHelper class
         databaseHelper = new DatabaseHelper(this);
 
-        // Nhận dữ liệu được chuyển từ MotorActivity
-        String selectedItem = getIntent().getStringExtra("selectedItem");
 
-        // Hiển thị chi tiết của xe máy được chọn
+        // Retrieve motor details from the database
+//        Motor motor = (Motor) databaseHelper.getAllMotor();
+//
+//        // Display motor details in the views
+//        if (motor != null) {
+//            Glide.with(this)
+//                    .load(motor.getImage())
+//                    .into(imageView);
+//            nameTextView.setText(motor.getDetailshead());
+//            priceTextView.setText(motor.getDetails());
+//            detailsTextView.setText(motor.getDetailsweight());
+//        }
+//        ArrayList<Motor> motors = (ArrayList<Motor>) databaseHelper.getAllMotor();
+//
+//// Display motor details in the views
+//        if (motors != null && !motors.isEmpty()) {
+//            Motor motor = motors.get(0); // Lấy phần tử đầu tiên từ danh sách motors
+            Glide.with(this)
+                    .load(motor.getImage())
+                    .into(imageView);
+            nameTextView.setText(motor.getName().toString());
+            priceTextView.setText("Giá tiền: "+Integer.toString(motor.getPrice()));
+            detailsTextView.setText("Mô tả: "+ motor.getDetails().toString());
+//        }
 
-        textView.setText("Chi tiết của xe máy: " + motor.getName() + "\nGiá: " + motor.getPrice());
     }
 
-    // Lấy giá của xe máy từ cơ sở dữ liệu
-    private String getMotorPrice(String name) {
-        String price = "";
-        SQLiteDatabase db = databaseHelper.getReadableDatabase();
-        String[] projection = {"price"};
-        String selection = "name=?";
-        String[] selectionArgs = {name};
-        Cursor cursor = db.query("motor", projection, selection, selectionArgs, null, null, null);
-        if (cursor.moveToNext()) {
-            price = cursor.getString(cursor.getColumnIndexOrThrow("price"));
-        }
-        cursor.close();
-        db.close();
-        return price;
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        // Close the database connection
+        databaseHelper.close();
     }
 }

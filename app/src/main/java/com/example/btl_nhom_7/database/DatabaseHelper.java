@@ -15,16 +15,20 @@ import java.util.List;
 public class DatabaseHelper extends SQLiteOpenHelper {
 
     private static final String DATABASE_NAME = "motor.db";
-    private static final int DATABASE_VERSION = 2;
+    private static final int DATABASE_VERSION = 3;
 
     private static final String TABLE_MOTOR_NAME = "motor";
     private static final String TBL_MOTOR_KEY_ID = "id";
     private static final String TBL_MOTOR_KEY_NAME = "name";
 
     private static final String TBL_MOTOR_KEY_PRICE = "price";
+
+    private static final String TBL_MOTOR_KEY_IMAGE = "image";
+
     private static final String TBL_MOTOR_KEY_DETAILS = "details";
-    private static final String TBL_MOTOR_KEY_DETAILSHEAD = "details_head";
-    private static final String TBL_MOTOR_KEY_DETAILWEIGHT = "details_weight";
+    private static final String TBL_MOTOR_KEY_DETAILS_2 = "details2";
+    private static final String TBL_MOTOR_KEY_DETAILS_HEAD = "detailshead";
+    private static final String TBL_MOTOR_KEY_DETAILS_WEIGHT = "detailsweight";
 
     public DatabaseHelper(Context context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
@@ -32,7 +36,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase db) {
-        String createTableMotor = String.format("CREATE TABLE %s (%s INTEGER PRIMARY KEY AUTOINCREMENT, %s TEXT, %s INTEGER, %s TEXT)",TABLE_MOTOR_NAME, TBL_MOTOR_KEY_ID, TBL_MOTOR_KEY_NAME, TBL_MOTOR_KEY_PRICE, TBL_MOTOR_KEY_DETAILS);
+        String createTableMotor = String.format("CREATE TABLE %s (%s INTEGER PRIMARY KEY AUTOINCREMENT, %s TEXT, %s INTEGER, %s TEXT, %s TEXT, %s TEXT, %s TEXT, %s TEXT)",TABLE_MOTOR_NAME, TBL_MOTOR_KEY_ID, TBL_MOTOR_KEY_NAME, TBL_MOTOR_KEY_PRICE, TBL_MOTOR_KEY_DETAILS,TBL_MOTOR_KEY_DETAILS_2,TBL_MOTOR_KEY_DETAILS_HEAD,TBL_MOTOR_KEY_DETAILS_WEIGHT, TBL_MOTOR_KEY_IMAGE);
         String createTableUser = "CREATE TABLE IF NOT EXISTS user (id INTEGER PRIMARY KEY AUTOINCREMENT," +
                 "phoneNumber TEXT , password TEXT)";
         String createFormWarrantyTableQuery = "CREATE TABLE IF NOT EXISTS FormWarranty (" +
@@ -72,9 +76,13 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             int id = cursor.getInt(0) ;
             String name = cursor.getString(1);
             int price = cursor.getInt(2);
-            int details = cursor.getInt(3);
+            String details = cursor.getString(3);
+            String details2 = cursor.getString(4);
+            String detailshead = cursor.getString(5);
+            String detailsweight = cursor.getString(6);
+            String image = cursor.getString(7);
 
-            listMotor.add(new Motor(name, price, ""));
+            listMotor.add(new Motor(id, name, price, image,"","","",""));
             cursor.moveToNext();
         }
 
@@ -86,7 +94,12 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         ContentValues values = new ContentValues();
         values.put(TBL_MOTOR_KEY_NAME, item.getName());
         values.put(TBL_MOTOR_KEY_PRICE, item.getPrice());
+        values.put(TBL_MOTOR_KEY_IMAGE, item.getImage());
         values.put(TBL_MOTOR_KEY_DETAILS, item.getDetails());
+        values.put(TBL_MOTOR_KEY_DETAILS_2, item.getDetails2());
+        values.put(TBL_MOTOR_KEY_DETAILS_HEAD, item.getDetailshead());
+        values.put(TBL_MOTOR_KEY_DETAILS_WEIGHT, item.getDetailsweight());
+
         db.insert(TABLE_MOTOR_NAME, null, values);
         db.close();
     }
@@ -159,5 +172,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
         db.close();
     }
+
 
 }
