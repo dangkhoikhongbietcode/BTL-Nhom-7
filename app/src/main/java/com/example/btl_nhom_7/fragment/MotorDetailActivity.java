@@ -23,11 +23,12 @@ public class MotorDetailActivity extends AppCompatActivity {
     private TextView nameTextView;
     private TextView priceTextView;
     private TextView detailsTextView;
+    private TextView headTextview;
 
     private DatabaseHelper databaseHelper;
      private Motor motor;
 
-    @SuppressLint("SuspiciousIndentation")
+    @SuppressLint({"SuspiciousIndentation", "CutPasteId"})
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -38,7 +39,7 @@ public class MotorDetailActivity extends AppCompatActivity {
         nameTextView = findViewById(R.id.tv_motor_details_head);
         priceTextView = findViewById(R.id.tv_motor_details);
         detailsTextView = findViewById(R.id.tv_motor_details_weight);
-
+        headTextview = findViewById(R.id.tv_motor_details_head);
         // Get the motor json from the intent
         Intent intent = getIntent();
         String motorstr = intent.getStringExtra("Motor");
@@ -72,6 +73,7 @@ public class MotorDetailActivity extends AppCompatActivity {
             nameTextView.setText(motor.getName().toString());
             priceTextView.setText("Giá tiền: "+Integer.toString(motor.getPrice()));
             detailsTextView.setText("Mô tả: "+ motor.getDetails().toString());
+            headTextview.setText(motor.getDetailshead().toString());
 //        }
 
     }
